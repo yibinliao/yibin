@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/folder/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/folder/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/folder/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/folder/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/folder/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/folder/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS,iOS开发基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="手势在用户交互中有着举足轻重的作用，这篇文字简单的介绍了iOS中的手势，并通过手势对控件进行变形处理。  手势iOS手势分为下面这几种：  UITapGestureRecognizer（点按） UIPanGestureRecognizer（拖动） UIScreenEdgePanGestureRecognizer (边缘拖动) UIPinchGestureRecognizer（捏合） UIRota">
+<meta name="keywords" content="iOS,iOS开发基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS手势与变形">
+<meta property="og:url" content="http:&#x2F;&#x2F;liaoyibin.top&#x2F;liaoyibin&#x2F;2016&#x2F;10&#x2F;10&#x2F;2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2&#x2F;index.html">
+<meta property="og:site_name" content="天然呆">
+<meta property="og:description" content="手势在用户交互中有着举足轻重的作用，这篇文字简单的介绍了iOS中的手势，并通过手势对控件进行变形处理。  手势iOS手势分为下面这几种：  UITapGestureRecognizer（点按） UIPanGestureRecognizer（拖动） UIScreenEdgePanGestureRecognizer (边缘拖动) UIPinchGestureRecognizer（捏合） UIRota">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww3.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0neee6mlj30dw0aldgf.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww4.sinaimg.cn&#x2F;large&#x2F;006tNc79jw1fazplz4mvmj306x0cbt8m.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww1.sinaimg.cn&#x2F;large&#x2F;006tNc79jw1fazply7kkpj306v0ca0sp.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww2.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fazq3j2ud5j306z0cfdft.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww1.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0j188yh1j30780evwfq.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww3.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0ja1f8fnj30f206nwev.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww2.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0jaxllv6j30ol0be77b.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww2.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0jc5mon3j307c06ydgd.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww4.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0jokip2vj30ej0aq3zz.jpg">
+<meta property="og:updated_time" content="2019-08-12T10:20:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;ww3.sinaimg.cn&#x2F;large&#x2F;006tNc79gw1fb0neee6mlj30dw0aldgf.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/folder/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liaoyibin.top/liaoyibin/2016/10/10/2016-10-10-iOS-手势与变形/"/>
+
+
+
+
+
+  <title>iOS手势与变形 | 天然呆</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/folder/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天然呆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">My exclusive</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/folder/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/folder/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/folder/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/folder/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/folder/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/folder/schedule/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/folder/sitemap.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/folder/404.html%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liaoyibin.top/liaoyibin/folder/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宜彬">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/folder/uploads/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天然呆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iOS手势与变形</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-10T00:00:00+08:00">
+                2016-10-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T18:20:44+08:00">
+                2019-08-12
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/folder/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/" class="leancloud_visitors" data-flag-title="iOS手势与变形">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                   分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>手势在用户交互中有着举足轻重的作用，这篇文字简单的介绍了iOS中的手势，并通过手势对控件进行变形处理。</p>
+</blockquote>
+<h1 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h1><p>iOS手势分为下面这几种：</p>
+<ul>
+<li>UITapGestureRecognizer（点按）</li>
+<li>UIPanGestureRecognizer（拖动）</li>
+<li>UIScreenEdgePanGestureRecognizer (边缘拖动)</li>
+<li>UIPinchGestureRecognizer（捏合）</li>
+<li>UIRotationGestureRecognizer（旋转）</li>
+<li>UILongPressGestureRecognizer（长按）</li>
+<li>​UISwipeGestureRecognizer（轻扫）</li>
+</ul>
+<p>这些手势大都继承于<strong>UIGestureRecognizer</strong>类，（<code>UIScreenEdgePanGestureRecognizer</code>继承于<code>UIPanGestureRecognizer</code>类）,</p>
+<p>需要说明的是这些手势只有一个是<strong>离散型手势</strong>，那就是<code>UITapGestureRecognizer</code>，一旦识别就无法取消，而且只会调用一次手势操作事件。</p>
+<p>换句话说其他手势是<strong>连续型手势</strong>，而连续型手势的特点就是：会多次调用手势操作事件，而且在连续手势识别后可以取消手势。</p>
+<p>从下图可以看出两者调用操作事件的次数是不同的：</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1fb0neee6mlj30dw0aldgf.jpg" alt=""></p>
+<p>这些手势类有着以下共同的方法:</p>
+<p>创建方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (instancetype)initWithTarget:(nullable id)target action:(nullable SEL)action;</span><br></pre></td></tr></table></figure>
+
+<p>移除方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeTarget:(nullable id)target action:(nullable SEL)action;</span><br></pre></td></tr></table></figure>
+
+<p>添加事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)addTarget:(id)target action:(SEL)action;</span><br></pre></td></tr></table></figure>
+
+<p>还有下面这些属性等：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,readonly) UIGestureRecognizerState state;// 手势状态</span><br><span class="line"></span><br><span class="line">typedef NS_ENUM(NSInteger, UIGestureRecognizerState) &#123;</span><br><span class="line">     UIGestureRecognizerStatePossible,   // 尚未识别是何种手势操作（但可能已经触发了触摸事件），默认状态</span><br><span class="line">     UIGestureRecognizerStateBegan,      // 手势已经开始，此时已经被识别，但是这个过程中可能发生变化，手势操作尚未完成</span><br><span class="line">     UIGestureRecognizerStateChanged,    // 手势状态发生转变</span><br><span class="line">     UIGestureRecognizerStateEnded,      // 手势识别操作完成（此时已经松开手指）</span><br><span class="line">     UIGestureRecognizerStateCancelled,  // 手势被取消，恢复到默认状态</span><br><span class="line">     UIGestureRecognizerStateFailed,     // 手势识别失败，恢复到默认状态</span><br><span class="line">     UIGestureRecognizerStateRecognized = UIGestureRecognizerStateEnded // 手势识别完成，同UIGestureRecognizerStateEnded</span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line">@property(nullable,nonatomic,weak) id &lt;UIGestureRecognizerDelegate&gt; delegate; // 代理</span><br><span class="line"></span><br><span class="line">@property(nonatomic, getter=isEnabled) BOOL enabled;</span><br></pre></td></tr></table></figure>
+
+<p>当然我们也可以自定义手势来实现特殊的需求，关于自定义手势可以看<a href="http://blog.csdn.net/mmoaay/article/details/47355709" target="_blank" rel="noopener">这篇博客</a>.</p>
+<p>接下来我们来看看这些常用手势的用法.</p>
+<h4 id="UITapGestureRecognizer（点按）"><a href="#UITapGestureRecognizer（点按）" class="headerlink" title="UITapGestureRecognizer（点按）"></a>UITapGestureRecognizer（点按）</h4><p>Tap手势有两个属性，</p>
+<ul>
+<li>numberOfTapsRequired</li>
+<li>numberOfTouchesRequired：</li>
+</ul>
+<p><code>numberOfTapsRequired</code>为触发事件需要点击的次数，默认是1；</p>
+<p><code>numberOfTouchesRequired</code>为触发事件需要的几个手指点按，默认是1；</p>
+<p>若都设置为2，就需要<code>两个</code>手指同时点按<code>2次</code>才会触发事件。</p>
+<p>Tap手势也是我们最常用的手势之一, 比如点击ImageView跳转到其他界面，或者双击图片放大缩小等。</p>
+<p>创建：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];</span><br><span class="line">   tap.numberOfTapsRequired = 2;</span><br><span class="line">   tap.numberOfTouchesRequired = 1;</span><br><span class="line">   [self.imageView addGestureRecognizer:tap];</span><br></pre></td></tr></table></figure>
+
+<h4 id="UIPanGestureRecognizer（拖动）"><a href="#UIPanGestureRecognizer（拖动）" class="headerlink" title="UIPanGestureRecognizer（拖动）"></a>UIPanGestureRecognizer（拖动）</h4><p>Pan手势的属性和方法：</p>
+<ul>
+<li>@property (nonatomic)          NSUInteger minimumNumberOfTouches __TVOS_PROHIBITED;</li>
+<li>@property (nonatomic)          NSUInteger minimumNumberOfTouches __TVOS_PROHIBITED;</li>
+<li>-(CGPoint)translationInView:(nullable UIView *)view;</li>
+<li>-(void)setTranslation:(CGPoint)translation inView:(nullable UIView *)view;</li>
+<li>-(CGPoint)velocityInView:(nullable UIView *)view; </li>
+</ul>
+<p><code>translationInView:</code>方法获取<code>View</code>的偏移量；</p>
+<p><code>setTranslation:</code>方法设置手势的偏移量；</p>
+<p><code>velocityInView:</code>方法获取速度；</p>
+<p>所以手势的创建方法都类似，这里就不在一一列举了。</p>
+<h4 id="UIScreenEdgePanGestureRecognizer-边缘拖动"><a href="#UIScreenEdgePanGestureRecognizer-边缘拖动" class="headerlink" title="UIScreenEdgePanGestureRecognizer (边缘拖动)"></a>UIScreenEdgePanGestureRecognizer (边缘拖动)</h4><p>ScreenEdgePan继承于<code>UIPanGestureRecognizer</code>，在屏幕边缘滑动才会触发</p>
+<ul>
+<li>@property (readwrite, nonatomic, assign) UIRectEdge edges;</li>
+</ul>
+<p><code>edges</code>为指定边缘拖动触发的边，是一个枚举：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_OPTIONS(NSUInteger, UIRectEdge) &#123;</span><br><span class="line">    UIRectEdgeNone   = 0,</span><br><span class="line">    UIRectEdgeTop    = 1 &lt;&lt; 0,</span><br><span class="line">    UIRectEdgeLeft   = 1 &lt;&lt; 1,</span><br><span class="line">    UIRectEdgeBottom = 1 &lt;&lt; 2,</span><br><span class="line">    UIRectEdgeRight  = 1 &lt;&lt; 3,</span><br><span class="line">    UIRectEdgeAll    = UIRectEdgeTop | UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight</span><br><span class="line">&#125; NS_ENUM_AVAILABLE_IOS(7_0);</span><br></pre></td></tr></table></figure>
+<p>其他方法和Tap手势一致，主要用于像左右抽屉视图的变换等处理。</p>
+<h4 id="UIPinchGestureRecognizer（捏合）"><a href="#UIPinchGestureRecognizer（捏合）" class="headerlink" title="UIPinchGestureRecognizer（捏合）"></a>UIPinchGestureRecognizer（捏合）</h4><p>Pinch手势有两个属性：</p>
+<ul>
+<li>@property (nonatomic)          CGFloat scale;              </li>
+<li>@property (nonatomic,readonly) CGFloat velocity; </li>
+</ul>
+<p><code>scale</code>：捏合比例</p>
+<p><code>velocity</code>:捏合速度 = <code>scale/second</code></p>
+<h4 id="UIRotationGestureRecognizer（旋转）"><a href="#UIRotationGestureRecognizer（旋转）" class="headerlink" title="UIRotationGestureRecognizer（旋转）"></a>UIRotationGestureRecognizer（旋转）</h4><p>Rotation手势和Pinch手势类似，同样有两个手势：</p>
+<ul>
+<li>@property (nonatomic)          CGFloat rotation;            </li>
+<li>@property (nonatomic,readonly) CGFloat velocity;</li>
+</ul>
+<p><code>rotation</code>:旋转弧度，注意，这里的单位是<strong>弧度</strong></p>
+<p><code>velocity</code>:旋转速度</p>
+<h4 id="UILongPressGestureRecognizer（长按）"><a href="#UILongPressGestureRecognizer（长按）" class="headerlink" title="UILongPressGestureRecognizer（长按）"></a>UILongPressGestureRecognizer（长按）</h4><p>LongPress的属性：</p>
+<ul>
+<li>@property (nonatomic) NSUInteger numberOfTapsRequired;      // Default is 0. </li>
+<li>@property (nonatomic) NSUInteger numberOfTouchesRequired __TVOS_PROHIBITED;   // Default is 1. </li>
+<li>@property (nonatomic) CFTimeInterval minimumPressDuration; </li>
+<li>@property (nonatomic) CGFloat allowableMovement;</li>
+</ul>
+<p><code>numberOfTapsRequired</code>和<code>numberOfTouchesRequired</code>和Tap手势类似，都是指定触发需要的点击次数和手指数量，但是LongPress手势的<code>numberOfTapsRequired</code>是指定长按前需要点击的次数。</p>
+<p><code>minimumPressDuration</code>:触发时间</p>
+<p><code>allowableMovement</code>:允许长按时间触发前允许手指滑动的范围。若是你在长按时手指移动，该长按手势将会失败，<code>allowableMovement</code>设置你能容忍的滑动范围，默认是10.</p>
+<h1 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h1><hr>
+<p>iOS的变形指的是图片的旋转、平移和缩放。这些变形可以和上面介绍的手势结合，完成许多变形操作。</p>
+<p>说变形前我们来看看<strong>CGAffineTransform</strong>，<strong>CGAffineTransform</strong>为一个结构体：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct CGAffineTransform &#123;</span><br><span class="line">    CGFloat a, b, c, d;</span><br><span class="line">    CGFloat tx, ty;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们输出一个控件的<code>transform</code>看看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;%@&quot;, NSStringFromCGAffineTransform(self.label.transform));</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2016-12-22 17:01:19.211 手势[6489:1481987] [1, 0, 0, 1, 0, 0]</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到输出了一个长度为6的数组：<code>[1, 0, 0, 1, 0, 0]</code>，并且我们可以猜测对应结构体中的<code>[a, b, c, d, tx, ty]</code>，并且默认的<code>transform</code>值就是<code>[1, 0, 0, 1, 0, 0]</code>。</p>
+<p>想进一步了解可以看这篇<a href="http://blog.csdn.net/ashiyanshi/article/details/48160429" target="_blank" rel="noopener">《iOS CGAffineTransform详解》</a></p>
+<p>对iOS控件进行变形实际就是对控件<code>transform</code>属性进行操作。</p>
+<p>但是我们使用中，使用已经封装好的的API对控件进行变形处理。分别是：</p>
+<ul>
+<li>CGAffineTransformScale()</li>
+<li>CGAffineTransformTranslate()</li>
+<li>CGAffineTransformRotate()</li>
+</ul>
+<p>和：</p>
+<ul>
+<li>CGAffineTransformMakeScale（）</li>
+<li>CGAffineTransformMakeTranslate()</li>
+<li>CGAffineTransformMakeRotate()</li>
+</ul>
+<p>这些API都是对设置<code>CGAffineTransform</code>的一个封装，针对<code>[a, b, c, d, tx, ty]</code>中不同的位置进行操作。</p>
+<p>下面我们在ViewController创建一个<code>UILabel</code>控件。然后对它进行变形操作。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79jw1fazplz4mvmj306x0cbt8m.jpg" alt=""></p>
+<h4 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h4><p>首先来看一个缩放操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 缩放到90%（相对）</span><br><span class="line">self.label.transform = CGAffineTransformScale(self.label.transform, 0.9, 0.9);</span><br><span class="line">    </span><br><span class="line">NSLog(@&quot;%@&quot;, NSStringFromCGAffineTransform( self.label.transform));</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2016-12-22 17:26:25.074 手势[6526:1564064] [0.90000000000000002, 0, 0, 0.90000000000000002, 0, 0]</span><br><span class="line">2016-12-22 17:26:26.096 手势[6526:1564064] [0.81000000000000005, 0, 0, 0.81000000000000005, 0, 0]</span><br><span class="line">2016-12-22 17:26:26.963 手势[6526:1564064] [0.72900000000000009, 0, 0, 0.72900000000000009, 0, 0]</span><br><span class="line">2016-12-22 17:26:28.830 手势[6526:1564064] [0.65610000000000013, 0, 0, 0.65610000000000013, 0, 0]</span><br></pre></td></tr></table></figure>
+
+<p>我们再看看另一个缩放：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">self.label.transform = CGAffineTransformMakeScale(0.9, 0.9);</span><br><span class="line"></span><br><span class="line">NSLog(@&quot;%@&quot;, NSStringFromCGAffineTransform( self.label.transform));</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2016-12-22 17:32:32.972 手势[6581:1600236] [0.90000000000000002, 0, 0, 0.90000000000000002, 0, 0]</span><br><span class="line">2016-12-22 17:32:34.164 手势[6581:1600236] [0.90000000000000002, 0, 0, 0.90000000000000002, 0, 0]</span><br><span class="line">2016-12-22 17:32:35.246 手势[6581:1600236] [0.90000000000000002, 0, 0, 0.90000000000000002, 0, 0]</span><br></pre></td></tr></table></figure>
+
+<p>对比可以发现<code>CGAffineTransformScale()</code>与<code>CGAffineTransformMakeScale()</code>的区别在于，<code>CGAffineTransformScale()</code>实在原理的基础上在进行缩放操作，而<code>CGAffineTransformMakeScale()</code>直接将缩放值设定为0.9不变了。</p>
+<p>缩放操作变动的是构体中<code>[a, b, c, d, tx, ty]</code>的<code>a</code>和<code>d</code>，值和变形系数<code>Scale</code>是相对应的，大于1是放大，小于1是缩小。。</p>
+<p><code>a</code>是横向缩放， <code>d</code>是纵向缩放。</p>
+<h4 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h4><p>先来看一个平移操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.label.transform = CGAffineTransformTranslate(self.label.transform, 10, 10);</span><br><span class="line">    NSLog(@&quot;%@&quot;, NSStringFromCGAffineTransform( self.label.transform));</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2016-12-22 17:40:38.568 手势[6608:1631232] [1, 0, 0, 1, 10, 10]</span><br><span class="line">2016-12-22 17:40:40.833 手势[6608:1631232] [1, 0, 0, 1, 20, 20]</span><br><span class="line">2016-12-22 17:40:41.834 手势[6608:1631232] [1, 0, 0, 1, 30, 30]</span><br><span class="line">2016-12-22 17:40:42.532 手势[6608:1631232] [1, 0, 0, 1, 40, 40]</span><br><span class="line">2016-12-22 17:40:43.162 手势[6608:1631232] [1, 0, 0, 1, 50, 50]</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到label往右下角移动</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79jw1fazply7kkpj306v0ca0sp.jpg" alt=""></p>
+<p>对应xy的正向坐标为右下角。</p>
+<h4 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.label.transform = CGAffineTransformRotate(self.label.transform, M_PI_2);</span><br><span class="line">NSLog(@&quot;%@&quot;, NSStringFromCGAffineTransform( self.label.transform));</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2016-12-22 17:59:43.680 手势[6667:1717130] [6.123233995736766e-17, 1, -1, 6.123233995736766e-17, 0, 0]</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1fazq3j2ud5j306z0cfdft.jpg" alt=""></p>
+<p>可以看到<code>label</code>顺时针旋转了<code>π/2</code>弧度（90°）。</p>
+<h1 id="手势结合变形"><a href="#手势结合变形" class="headerlink" title="手势结合变形"></a>手势结合变形</h1><hr>
+<p>手势结合变形就是通过手势对控件变形处理。</p>
+<p>上代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()&lt;UIGestureRecognizerDelegate&gt;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIImageView *imageView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    </span><br><span class="line">//    CGAffineTransform *mytransform = self.imageView.transform;</span><br><span class="line">    self.imageView.userInteractionEnabled = YES;</span><br><span class="line">    //1双击 恢复</span><br><span class="line">    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];</span><br><span class="line">    tap.numberOfTapsRequired = 2;</span><br><span class="line">    tap.numberOfTouchesRequired = 1;</span><br><span class="line">    [self.imageView addGestureRecognizer:tap];</span><br><span class="line">    </span><br><span class="line">    //2拖拽</span><br><span class="line">    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];</span><br><span class="line">//    pan.delegate = self;</span><br><span class="line">    [self.imageView addGestureRecognizer:pan];</span><br><span class="line">    </span><br><span class="line">    //3捏合</span><br><span class="line">    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinch:)];</span><br><span class="line">    pinch.delegate = self;</span><br><span class="line">    [self.imageView addGestureRecognizer:pinch];</span><br><span class="line">    </span><br><span class="line">    //4旋转</span><br><span class="line">    UIRotationGestureRecognizer *rotaion = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotaion:)];</span><br><span class="line">//    pinch.delegate = self;</span><br><span class="line">    [self.imageView addGestureRecognizer:rotaion];</span><br><span class="line">    </span><br><span class="line">    // 长按</span><br><span class="line">    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];</span><br><span class="line">    longPress.numberOfTapsRequired = 0;</span><br><span class="line">    longPress.minimumPressDuration = 1;</span><br><span class="line">//    longPress.allowableMovement = 3;</span><br><span class="line">    [self.imageView addGestureRecognizer:longPress];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">- (void)tap:(UITapGestureRecognizer *)sender&#123;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;tap！&quot;);</span><br><span class="line">    </span><br><span class="line">    //恢复</span><br><span class="line">    self.imageView.transform = CGAffineTransformIdentity;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">- (void)pan:(UIPanGestureRecognizer *)sender&#123;</span><br><span class="line">//    CGPoint center = self.imageView.center;</span><br><span class="line">//    if (center.x &lt; 0)&#123;</span><br><span class="line">//        center.x = 0;</span><br><span class="line">//    &#125;else&#123;</span><br><span class="line">//        center.x += [sender translationInView:self.view].x;</span><br><span class="line">//    &#125;</span><br><span class="line">//    </span><br><span class="line">//    center.y += [sender translationInView:self.view].y;</span><br><span class="line">//    self.imageView.center = center;</span><br><span class="line">    //将相对偏移量清零</span><br><span class="line">//    [sender setTranslation:CGPointMake(0, 0) inView:self.view];</span><br><span class="line">    </span><br><span class="line">    self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, [sender translationInView:self.imageView].x, [sender translationInView:self.imageView].y);</span><br><span class="line">    [sender setTranslation:CGPointZero inView:self.view];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)pinch:(UIPinchGestureRecognizer *)sender&#123;</span><br><span class="line">    </span><br><span class="line">    CGFloat  scale = sender.scale;</span><br><span class="line">    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);</span><br><span class="line">    [sender setScale:1];</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)rotaion:(UIRotationGestureRecognizer *)sender&#123;</span><br><span class="line">    //获取旋转弧度</span><br><span class="line">    CGFloat rotation = sender.rotation;</span><br><span class="line">    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, rotation);</span><br><span class="line">    sender.rotation = 0;</span><br><span class="line">    </span><br><span class="line">//    self.imageView.transform = CGAffineTransformMakeRotation(sender.rotation);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)longPress:(UILongPressGestureRecognizer *)sender &#123;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;longPress:%@&quot;, sender);</span><br><span class="line">    </span><br><span class="line">    // 判断长按事件触发</span><br><span class="line">    if (sender.state == UIGestureRecognizerStateBegan) &#123;</span><br><span class="line">        self.imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//希望两个手势共存</span><br><span class="line">//遵守 UIGestureRecognizerDelegate 协议</span><br><span class="line">//实现方法 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer</span><br><span class="line">//将要同时实现的手势设置代理 pinch.delegate = self; pinch.delegate = self;</span><br><span class="line"></span><br><span class="line">-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer&#123;</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有几点需要注意：</p>
+<ul>
+<li>给本身没有交互功能的控件（）imagView, UIlabel, View等）添加手势，要设置<code>userInteractionEnabled</code>为<strong>YES</strong>，否则识别不了手势</li>
+<li>想要手势共存需要：<ul>
+<li>遵守 <code>UIGestureRecognizerDelegate</code> 协议</li>
+<li>实现<code>-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer</code>方法，返回<code>YES</code></li>
+<li>将要同时实现的手势设置代理 <code>pinch.delegate = self</code>; <code>pinch.delegate = self</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="在storyboard中添加手势"><a href="#在storyboard中添加手势" class="headerlink" title="在storyboard中添加手势"></a>在storyboard中添加手势</h1><p>在<code>storyboard</code>的控件栏中我们可以看到这些手势控件：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1fb0j188yh1j30780evwfq.jpg" alt="storyboard中的手势控件"></p>
+<h4 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h4><ol>
+<li><p>直接将手势控件拖到要添加的视图上</p>
+<p> <img src="http://ww3.sinaimg.cn/large/006tNc79gw1fb0ja1f8fnj30f206nwev.jpg" alt=""></p>
+</li>
+<li><p>关联手势事件</p>
+<p> <img src="http://ww2.sinaimg.cn/large/006tNc79gw1fb0jaxllv6j30ol0be77b.jpg" alt=""></p>
+</li>
+<li><p>设置手势属性</p>
+<p> <img src="http://ww2.sinaimg.cn/large/006tNc79gw1fb0jc5mon3j307c06ydgd.jpg" alt=""></p>
+</li>
+</ol>
+<p>注意：若想同时识别多个手势，方法和上面相同，遵循协议，实现方法，设置代理，不过代理可以手动关联。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1fb0jokip2vj30ej0aq3zz.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    BY
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liaoyibin.top/liaoyibin/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/" title="iOS手势与变形">http://liaoyibin.top/liaoyibin/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/folder/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/folder/tags/iOS%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag"># iOS开发基础</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/folder/2016/10/18/2016-10-18-Xcode-Debug-%E5%A4%A7%E5%85%A8/" rel="prev" title="Xcode Debug 大全">
+                Xcode Debug 大全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/folder/uploads/myAvatar.jpeg"
+                alt="宜彬" />
+            
+              <p class="site-author-name" itemprop="name">宜彬</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/folder/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">177</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/folder/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/folder/tags/index.html">
+                  <span class="site-state-item-count">112</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yibinliao/liaoyibin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/lyibin/blog" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-glide"></i>Gitee</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                ��������
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#手势"><span class="nav-number">1.</span> <span class="nav-text">手势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UITapGestureRecognizer（点按）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">UITapGestureRecognizer（点按）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIPanGestureRecognizer（拖动）"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">UIPanGestureRecognizer（拖动）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIScreenEdgePanGestureRecognizer-边缘拖动"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">UIScreenEdgePanGestureRecognizer (边缘拖动)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIPinchGestureRecognizer（捏合）"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">UIPinchGestureRecognizer（捏合）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIRotationGestureRecognizer（旋转）"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">UIRotationGestureRecognizer（旋转）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UILongPressGestureRecognizer（长按）"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">UILongPressGestureRecognizer（长按）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变形"><span class="nav-number">2.</span> <span class="nav-text">变形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缩放"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平移"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">旋转</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手势结合变形"><span class="nav-number">3.</span> <span class="nav-text">手势结合变形</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在storyboard中添加手势"><span class="nav-number">4.</span> <span class="nav-text">在storyboard中添加手势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用方法："><span class="nav-number">4.0.0.1.</span> <span class="nav-text">使用方法：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宜彬</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/folder/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/folder/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/folder/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/folder/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/folder/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/folder/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/folder/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/folder/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/folder/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("uxygA8bNWrpfwUvb6bMzegq8-gzGzoHsz", "E4hOT01N1yMBmFGk0koDAj9v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/folder/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/folder/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/folder/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/folder/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+  <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
+
+
+</body>
+</html>
