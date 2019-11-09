@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -152,7 +154,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -207,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,7 +246,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -254,7 +256,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -264,7 +266,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -274,7 +276,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -284,7 +286,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -293,28 +295,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -483,6 +475,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -495,7 +492,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  3.7k 字
                 </span>
               
 
@@ -511,7 +508,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  14 分钟
                 </span>
               
             </div>
@@ -547,7 +544,7 @@
 <p>&emsp;&emsp;博客中的代码都会在本渣渣的GitHub上贴出，欢迎<em>Watch、Star、Fork</em>。</p>
 <h2 id="一、算法介绍："><a href="#一、算法介绍：" class="headerlink" title="一、算法介绍："></a>一、算法介绍：</h2><p>&emsp;&emsp;上一个算法介绍的是k-近邻算法，它可以完成很多分类任务，但是它最大的缺点就是无法给出数据的内在含义，决策树的主要优势就在于数据形式非常容易理解。决策树的一个重要任务就是为了理解数据中所蕴含的知识信息，所以决策树可以使用不熟悉的数据集合，并从中提取出一系列规则，这些机器根据数据集创建规则的过程就是机器学习的过程。专家系统中经常食用决策树，而且决策树给出结果往往可以匹敌在当前领域具有几十年工作经验的人类专家。流程图形式的决策树如下：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170903204144014?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170903204144014?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <h3 id="决策树："><a href="#决策树：" class="headerlink" title="决策树："></a>决策树：</h3><ul>
@@ -619,7 +616,7 @@
 <h3 id="递归构建决策树："><a href="#递归构建决策树：" class="headerlink" title="递归构建决策树："></a>递归构建决策树：</h3><p>&emsp;&emsp;从数据集构造决策树算法的工作原理如下：得到原始数据，然后基于最好的属性值划分数据集。第一次划分之后，数据将被向下传递到树分支的下一个节点，在这个节点上，可以再次划分数据（递归）。</p>
 <p>&emsp;&emsp;递归结束的条件：程序遍历完所有划分数据集的属性，或者每个分支下的所有实例都具有相同的分类。如果所欲实例都具有相同的分类，则得到一个叶子节点或者终止块。任何到达叶子节点的数据必须属于叶子节点的分类，如下图：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170903204044451?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170903204044451?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;如果数据集已经处理了所有的属性，但是类标签依然不是唯一的，此时我们需要决定如何定义该叶子节点，在这种情况下，书中采用的是多数表决的方法决定该叶子节点的分类。</p>
@@ -635,8 +632,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>reload(trees)</span><br><span class="line">&lt;module <span class="string">'trees'</span> <span class="keyword">from</span> <span class="string">'E:\\机器学习实战\\mycode\\Ch03\\trees.py'</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myDat, labels = trees.createDataSet()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myTree = trees.createTree(myDat, labels)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myTree</span><br><span class="line">&#123;<span class="string">'no surfacing'</span>: &#123;<span class="number">0</span>: <span class="string">'no'</span>, <span class="number">1</span>: &#123;<span class="string">'flippers'</span>: &#123;<span class="number">0</span>: <span class="string">'no'</span>, <span class="number">1</span>: <span class="string">'yes'</span>&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;变量myTree包含了很多代表树结构信息的嵌套字典，从左边开始，第一个关键字no surfacing是第一个划分数据集的特征名称，该关键字的值也是另一个数据字典。第二个关键字是no surfacing特征划分的数据集，这些关键字的值是no surfacing节点的子节点。这些值可能是类标签，也可能是另一个数据字典，如果值是标签，则该子节点是叶子结点；如果是另一个数据字典，则子节点是一个判断节点，这种格式结构不断重复就构成了整棵树。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -797,7 +794,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -829,6 +826,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -863,20 +867,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -932,7 +936,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -947,6 +951,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1110,7 +1134,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1615,5 +1639,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

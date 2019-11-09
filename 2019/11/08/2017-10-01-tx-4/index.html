@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -170,7 +172,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -225,7 +227,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,7 +264,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -272,7 +274,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -282,7 +284,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -292,7 +294,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -302,7 +304,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -311,28 +313,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -501,6 +493,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -513,7 +510,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  1.5k 字
                 </span>
               
 
@@ -529,7 +526,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -560,66 +557,66 @@
 </ul>
 <hr>
 <p>&#160;&#160;&#160;&#160;上一篇博文简单介绍了如何使用Nsight Eclipse Edition来导入CUDA例程并构建应用程序到NVIDIA Jetson TX1开发板上。本篇博文将继续介绍Nsight Eclipse Edition的进阶使用，通过OpenCV测试程序和GStreamer测试程序，分别介绍如何添加库链接和库路径到工程文件中，全是干货。友情提示，记得打开开发板并接入到局域网哦~</p>
-<p><strong><font color="black" size=5 face="仿宋">1.  OpenCV测试程序</font></strong></p>
+<p><strong><font color="black" size="5" face="仿宋">1.  OpenCV测试程序</font></strong></p>
 <p>&#160;&#160;&#160;&#160;JetPack3.0为TX1预装的OpenCV版本为OpenCV2.4.13，环境变量都已配置好，所以我们无需在开发套件上进行任何操作。</p>
 <p>1.新建CUDA C++工程，如下图所示：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604153758615?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604153758615?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>2.填入工程名称，工程类型为空工程，工具链为CUDA Toolkit 8.0，单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604154103462?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604154103462?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>3.基础设置，这里我们之前已经说过了，对于TX1，全部选5.3。当然按默认的2.0一般也不会报错：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604154321262?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604154321262?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500"></div>
 <p></p>
 
 <p>4.目标系统，默认的是主机。如果你之前设置过，这次你只需要单击下拉条就会出现之前的设置，选中就好。我在这里还是重复一遍操作吧，单击Manage：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604154558719?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604154558719?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>5.上一步骤之后出现远程连接对话框，填入开发板IP地址和用户名，其他的默认就好，然后单击Finish退出：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604154853351?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="450" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604154853351?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="450"></div>
 <p></p>
 
 <p>6.把Local System关掉，然后选择远程连接的工程路径、工具箱路径和CPU类型地，选完后单击Finish。7、8、9会分别对这三项进行详细说明：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604155215776?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604155215776?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>7.Project Path：在步骤6中单击Project Path后面的Browse，出现下图所示对话框，里面显示的是远程连接的开发套件的文件目录，可以进行简单的新建删除等功能。这里我们选择好自己的工程路径。中间可能会出现链接提示，有时还会让你填写TX1的密码，大家乖乖填上就好：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604155631075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604155631075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>8.Toolkit：在步骤6中单击Tookit后面的Manage，弹出下图所示对话框，第一次打开的话里面的Toolkit path 是空的。我们不需要自己去找工具箱的路径，只需要单击Detect，系统就会帮我们自动填写上工具箱路径。中间可能会出现链接提示，有时还会让你填写TX1的密码，大家乖乖填上就好：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604161321037?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604161321037?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>9.CPU Architecture：下拉菜单中有很多类型，我们的TX1对应的是AArch64：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604161207942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="200" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604161207942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="200"></div>
 <p></p>
 
 <p>10.对新建的工程添加源文件：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604161538150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604161538150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>11.因为我们例程用的是OpenCV的hpp头文件，所以源文件最好也写成C++的源文件。填入文件名，选择默认的C++源文件模板：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604162124259?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604162124259?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>12.测试代码如下：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604162232987?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="300" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604162232987?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="300"></div>
 <p></p>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * test_opencv.cpp</span><br><span class="line"> *</span><br><span class="line"> *  Created on: Jun 3, 2017</span><br><span class="line"> *      Author: wordzzzz</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">#include &quot;opencv2/highgui/highgui.hpp&quot;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        cv::Mat img(512, 512, CV_8UC3, cv::Scalar(0));</span><br><span class="line"></span><br><span class="line">        cv::putText(img,</span><br><span class="line">                &quot;Hello, OpenCV on Jetson!&quot;,</span><br><span class="line">                cv::Point(10, img.rows / 2),</span><br><span class="line">                cv::FONT_HERSHEY_DUPLEX,</span><br><span class="line">                1.0,</span><br><span class="line">                CV_RGB(118, 185, 0),</span><br><span class="line">                2);</span><br><span class="line">        cv::imshow(&quot;Hello!&quot;, img);</span><br><span class="line">        cv::waitKey();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -628,55 +625,55 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg-config --cflags --libs opencv</span><br></pre></td></tr></table></figure>
 <p>&#160;&#160;&#160;&#160;查看结果如下图所示：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604162731793?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="80" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604162731793?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="80"></div>
 <p></p>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@tegra-ubuntu:~$ pkg-config --cflags --libs opencv</span><br><span class="line">-I/usr/include/opencv -L/usr/local/cuda-8.0/lib64 -lopencv_calib3d -lopencv_contrib -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_gpu -lopencv_highgui -lopencv_imgproc -lopencv_legacy -lopencv_ml -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab -lopencv_detection_based_tracker -lopencv_esm_panorama -lopencv_facedetect -lopencv_imuvstab -lopencv_tegra -lopencv_vstab -lcufft -lnpps -lnppi -lnppc -lcudart -latomic -ltbb -lrt -lpthread -lm -ldl</span><br></pre></td></tr></table></figure>
 
 <p>14.打开性能设置，即在工程右键，然后选择Properties：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604163304172?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604163304172?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="600"></div>
 <p></p>
 
 <p>15.重点来了：添加库链接。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604165804309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="450" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604165804309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="450"></div>
 <p></p>
 
 
 <p><font color="red">&#160;&#160;&#160;&#160;如果你在第12步直接构建上述代码，肯定会出错，因为我们现在所有的设置，都是在为我们的工程文件编写编译命令。熟悉g++/gcc的朋友们可能会有印象，就是我们直接用g++/gcc编译文件的时候，如果用到哪个链接库，一般都是在后面加上-l这种链接的，否则会找不到相应的库链接。</font></p>
 <p>16.经过上述步骤后再CTR+B进行构建，我们可以看到构建命令包括了我们添加的库链接，没有报错表明构建成功：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604171314582?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="250" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604171314582?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="250"></div>
 <p></p>
 
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604170640220?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="100" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604170640220?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="100"></div>
 <p></p>
 
 
-<p><strong><font color="black" size=5 face="仿宋">2.  Gstreamer测试程序</font></strong></p>
+<p><strong><font color="black" size="5" face="仿宋">2.  Gstreamer测试程序</font></strong></p>
 <p>1.新建项目，过程不再赘述，然后添加源文件，这次我们用C模板，而不是C++。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * basic-tutorial-1.c</span><br><span class="line"> *</span><br><span class="line"> *  Created on: Jun 1, 2017</span><br><span class="line"> *      Author: wordzzzz</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">#include &lt;gst/gst.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">  GstElement *pipeline;</span><br><span class="line">  GstBus *bus;</span><br><span class="line">  GstMessage *msg;</span><br><span class="line"></span><br><span class="line">  /* Initialize GStreamer */</span><br><span class="line">  gst_init (&amp;argc, &amp;argv);</span><br><span class="line"></span><br><span class="line">  /* Build the pipeline */</span><br><span class="line">  pipeline = gst_parse_launch (&quot;playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm&quot;, NULL);</span><br><span class="line"></span><br><span class="line">  /* Start playing */</span><br><span class="line">  gst_element_set_state (pipeline, GST_STATE_PLAYING);</span><br><span class="line"></span><br><span class="line">  /* Wait until error or EOS */</span><br><span class="line">  bus = gst_element_get_bus (pipeline);</span><br><span class="line">  msg = gst_bus_timed_pop_filtered (bus, GST_CLOCK_TIME_NONE, GST_MESSAGE_ERROR | GST_MESSAGE_EOS);</span><br><span class="line"></span><br><span class="line">  /* Free resources */</span><br><span class="line">  if (msg != NULL)</span><br><span class="line">    gst_message_unref (msg);</span><br><span class="line">  gst_object_unref (bus);</span><br><span class="line">  gst_element_set_state (pipeline, GST_STATE_NULL);</span><br><span class="line">  gst_object_unref (pipeline);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>2.添加头文件路径和库链接：此处比OpenCV多了头文件路径的添加，因为gstremer-1.0的头文件路径貌似没有加入到环境变量中。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604172555604?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604172555604?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500"></div>
 <p></p>
 
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604173708168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604173708168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500"></div>
 <p></p>
 
 <p><font color="red">&#160;&#160;&#160;&#160;上图中添加的路径，切记是TX1上的路径，而不是虚拟机里的路径。之前用过QT进行过交叉编译，感觉被洗脑了。Nsight的构建，是通过你的设置产生的编译命令，直接在TX1上进行编译的，而不是先生成在虚拟机里再拷贝到TX1上。所以你只要保证你添加的头文件路径和库路径能在TX1上找到就行，没必要把TX1上的库都拷过来，这样反而会出错。</font></p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170604172613325?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170604172613325?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="500"></div>
 <p></p>
 
 <p>3.CTRL+B构建后在TX1上运行，会有视频播放出来。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -822,7 +819,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -854,6 +851,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -888,20 +892,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -941,7 +945,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -956,6 +960,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1119,7 +1143,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1604,5 +1628,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

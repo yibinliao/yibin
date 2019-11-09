@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -153,7 +155,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -208,7 +210,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,7 +247,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -255,7 +257,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -265,7 +267,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -275,7 +277,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -285,7 +287,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -294,28 +296,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -484,6 +476,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -496,7 +493,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  3k 字
                 </span>
               
 
@@ -512,7 +509,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  11 分钟
                 </span>
               
             </div>
@@ -552,7 +549,7 @@
 <p>&emsp;&emsp;朴素贝叶斯是贝叶斯决策理论的一部分，所以在此之前我们有必要快速了解一下贝叶斯决策理论。</p>
 <p>&emsp;&emsp;假设现在我们有一个数据集，它由两类数据组成，数据分布如下图所示。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170909224840023?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170909224840023?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>&emsp;&emsp;假设WordZzzz找到了描述图中两类数据的统计参数。现在用P1(x,y)表示数据点(x,y)属于类别1（图中用原点表示的类别）的概率，用P2(x,y)表示数据点(x,y)属于类别2（图中用三角形表示的类别）的概率，那么对于一个新数据点(x,y)，可以用下面的规则来判断它的类别：</p>
@@ -572,13 +569,13 @@
 <h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p>&emsp;&emsp;接下来讲讲概率和条件概率。还好，就一两个公式。</p>
 <p>&emsp;&emsp;假设现在有一个装了7块石头的罐子，其中3块是灰色的，4块是黑色的，如下图所示。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170909224900451?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="200" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170909224900451?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" height="200"></div>
 <p></p>
 
 <p>&emsp;&emsp;如果从罐子里随机抽取一块石头，那么是灰色石头的可能性是多少？很显然，灰色石头概率3/7，黑色石头概率4/7。我们使用P(gray)来表示取到灰色石头的概率，其概率值可以通过灰色石头数目除以总数目来得到。</p>
 <p>&emsp;&emsp;如果这7块石头放在两个桶里，如下图所示，那么上述概率如何计算？</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170909224951714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="300" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170909224951714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="300"></div>
 <p></p>
 
 <p>&emsp;&emsp;要计算$P(gray)$或者$P(black)$，事先得到石头所在桶的信息会不会改变结果？假定计算的是从B桶中取到灰色石头的概率，这个概率记作$P(gray | bucketB)$，我们称之为“在已知石头出自B桶的条件下，取出灰色石头的概率”。不难的到$P(gray | bucketA)$的值为2/4，$P(gray | bucketB)$的值为1/3。</p>
@@ -590,32 +587,32 @@
 <p>&emsp;&emsp;知道条件概率怎么算之后，接下来的问题就是如何将其应用到分类器中。接下来，我们将讨论如何结合贝叶斯决策理论使用条件概率。</p>
 <h2 id="使用条件概率来分类"><a href="#使用条件概率来分类" class="headerlink" title="使用条件概率来分类"></a>使用条件概率来分类</h2><p>&emsp;&emsp;贝叶斯决策理论要求计算两个概率P1(x,y)和P2(x,y)：</p>
 <ul>
-<li><input disabled="" type="checkbox"> 如果$P1(x,y) &gt; P2(x,y)$，那么属于类别1；</li>
-<li><input disabled="" type="checkbox"> 如果$P1(x,y) &lt; P2(x,y)$，那么属于类别2。</li>
+<li><input disabled type="checkbox"> 如果$P1(x,y) &gt; P2(x,y)$，那么属于类别1；</li>
+<li><input disabled type="checkbox"> 如果$P1(x,y) &lt; P2(x,y)$，那么属于类别2。</li>
 </ul>
 <p>&emsp;&emsp;但这两个准则并不是贝叶斯决策理论的所有内容，使用P1()和P2()只是为了尽可能简化描述，而真正需要计算和比较的是$P(c_1|x,y)$和$P(c_2|x,y)$。这些符号所代表的具体意义是：给定某个由x、y表示的数据点，那么该数据点来自类别$c_1$的概率是多少？数据点来自类别$c_2$的概率又是多少？注意这些概率与刚才给出的概率$P(x,y|c_1)$并不一样，不过可以使用贝叶斯准则来交换概率中条件与结果。具体地，应用贝叶斯准则得到：</p>
 <p>$$ P(c_i|x,y) = \frac {p(x,y|c_i)p(c_i)} {p(x,y)} $$</p>
 <p>&emsp;&emsp;使用这些定义，可以定义贝叶斯分类准则为：</p>
 <ul>
-<li><input disabled="" type="checkbox"> 如果$P1(c_i|x,y) &gt; P2(c_i|x,y)$，那么属于类别1；</li>
-<li><input disabled="" type="checkbox"> 如果$P1(c_i|x,y) &lt; P2(c_i|x,y)$，那么属于类别2。</li>
+<li><input disabled type="checkbox"> 如果$P1(c_i|x,y) &gt; P2(c_i|x,y)$，那么属于类别1；</li>
+<li><input disabled type="checkbox"> 如果$P1(c_i|x,y) &lt; P2(c_i|x,y)$，那么属于类别2。</li>
 </ul>
 <p>&emsp;&emsp;使用贝叶斯准则，可以通过已知的三个概率值来计算未知的概率值。下一篇就会给出利用贝叶斯准则来计算概率并对数据进行分类的代码。</p>
 <h2 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h2><p>&emsp;&emsp;大家要是对贝叶斯定理不是很理解的话，可以看看这部分内容（摘自中文维基百科：<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86）。" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86）。</a></p>
 <p>&emsp;&emsp;贝叶斯定理是关于随机事件A和B的条件概率的一则定理。<br>$${\displaystyle P(A|B)={\frac {P(B|A),P(A)}{P(B)}}}$$<br>其中P(A|B)是在B发生的情况下A发生的可能性。<br>&emsp;&emsp;在贝叶斯定理中，每个名词都有约定俗成的名称：</p>
 <ul>
 <li>[  ] P(A|B)是已知B发生后A的条件概率，也由于得自B的取值而被称作A的后验概率。</li>
-<li><input disabled="" type="checkbox"> P(B|A)是已知A发生后B的条件概率，也由于得自A的取值而被称作B的后验概率。</li>
-<li><input disabled="" type="checkbox"> P(A)是A的先验概率（或边缘概率）。之所以称为”先验”是因为它不考虑任何B方面的因素。</li>
-<li><input disabled="" type="checkbox"> P(B)是B的先验概率或边缘概率。</li>
+<li><input disabled type="checkbox"> P(B|A)是已知A发生后B的条件概率，也由于得自A的取值而被称作B的后验概率。</li>
+<li><input disabled type="checkbox"> P(A)是A的先验概率（或边缘概率）。之所以称为”先验”是因为它不考虑任何B方面的因素。</li>
+<li><input disabled type="checkbox"> P(B)是B的先验概率或边缘概率。</li>
 </ul>
 <p>&emsp;&emsp;按这些术语，贝叶斯定理可表述为：</p>
 <ul>
-<li><input disabled="" type="checkbox"> 后验概率 = (相似度*先验概率)/标准化常量</li>
+<li><input disabled type="checkbox"> 后验概率 = (相似度*先验概率)/标准化常量</li>
 </ul>
 <p>&emsp;&emsp;也就是说，后验概率与先验概率和相似度的乘积成正比。<br>&emsp;&emsp;另外，比例P(B|A)/P(B)也有时被称作标准相似度（standardised likelihood），贝叶斯定理可表述为：</p>
 <ul>
-<li><input disabled="" type="checkbox"> 后验概率 = 标准相似度*先验概率</li>
+<li><input disabled type="checkbox"> 后验概率 = 标准相似度*先验概率</li>
 </ul>
 <p>胰腺癌检测：</p>
 <p>&emsp;&emsp;基于贝叶斯定理：即使100%的胰腺癌症患者都有某症状，而某人有同样的症状，绝对不代表该人有100%的概率得胰腺癌，还需要考虑先验概率，假设胰腺癌的发病率是十万分之一，而全球有同样症状的人有万分之一，则此人得胰腺癌的概率只有十分之一，90%的可能是是假阳性。</p>
@@ -633,8 +630,8 @@
 </ul>
 <p>&emsp;&emsp;由统计学知，如果每个特征需要N个样本，那么对于10个特征将需要$N^{10}$个样本，对于包含1000个特征的词汇表将需要$N^{1000}$个样本。吓我一跳，所需要的样本数会随着特征数目增大而迅速增长。</p>
 <p>&emsp;&emsp;如果特征之间相互独立，那么样本数就可以减少到1000*N，所谓独立指的是统计意义上的独立，即一个特征或者单词出现的可能性与它和其他单词相邻没有关系，但是我们知道这种假设并不正确。这个假设正式朴素贝叶斯分类器中朴素（naive，天真！）一词的含义。朴素贝叶斯分类器中的另一个假设是，每个特征同等重要。其实这个假设也有问题。如果要判断留言是否得当，那么可能不需要看完所有的1000个单词，而只需要看10-20个就够了。尽管上述假设存在一些瑕疵，但朴素贝叶斯的实际效果却很好。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -795,7 +792,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -827,6 +824,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -861,20 +865,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -930,7 +934,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -945,6 +949,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1108,7 +1132,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1613,5 +1637,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

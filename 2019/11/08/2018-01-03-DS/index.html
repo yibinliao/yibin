@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -152,7 +154,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -207,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,7 +246,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -254,7 +256,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -264,7 +266,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -274,7 +276,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -284,7 +286,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -293,28 +295,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -483,6 +475,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -495,7 +492,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  851 字
                 </span>
               
 
@@ -511,7 +508,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -551,12 +548,12 @@
 </ul>
 <h3 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h3><p>&emsp;&emsp;wikipedia的大数据规模演示：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180108111324944?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="selectsort from wikipedia"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180108111324944?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="selectsort from wikipedia"></div>
 <p></p>
 
 <p>&emsp;&emsp;wordzzzz的小数据规模演示：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180108111351977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="selectsort from wordzzzz"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180108111351977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="selectsort from wordzzzz"></div>
 <p></p>
 
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*直接选择排序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectSort</span><span class="params">(T *<span class="built_in">array</span>, <span class="keyword">const</span> <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">array</span> == <span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">throw</span> invalid_argument(<span class="string">"Array must not be empty"</span>);</span><br><span class="line">	<span class="keyword">if</span> (length &lt;= <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length - <span class="number">1</span>; ++i)&#123;		<span class="comment">//外循环，每次选出一个最小的元素放到前面</span></span><br><span class="line">		<span class="keyword">int</span> min = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; length; ++j)	<span class="comment">//内循环，确定最小元素的下标</span></span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">array</span>[j] &lt; <span class="built_in">array</span>[min])</span><br><span class="line">				min = j;</span><br><span class="line">		<span class="keyword">if</span> (min != i)&#123;							<span class="comment">//如果当前数据不是最小元素，就交换</span></span><br><span class="line">			T tmp = <span class="built_in">array</span>[i];</span><br><span class="line">			<span class="built_in">array</span>[i] = <span class="built_in">array</span>[min];</span><br><span class="line">			<span class="built_in">array</span>[min] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -571,8 +568,8 @@
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;选择排序的交换操作介于 ${\displaystyle 0}$ 和 ${\displaystyle (n-1)}$ 次之间。选择排序的比较操作为 ${\displaystyle n(n-1)/2}$ 次之间。选择排序的赋值操作介于 ${\displaystyle 0}$ 和 ${\displaystyle 3(n-1)}$ 次之间。</p>
 <p>&emsp;&emsp;比较次数 ${\displaystyle O(n^{2})}$ ，比较次数与关键字的初始状态无关，总的比较次数 ${\displaystyle N=(n-1)+(n-2)+…+1=n\times (n-1)/2}$ 。交换次数 ${\displaystyle O(n)}$ ，最好情况是，已经有序，交换0次；最坏情况是，逆序，交换 ${\displaystyle n-1} 次。交换次数比冒泡排序较少，由于交换所需CPU时间比比较所需的CPU时间多， ${\displaystyle n}$ 值较小时，选择排序比冒泡排序快。</p>
 <p>&emsp;&emsp;原地操作几乎是选择排序的唯一优点，当空间复杂度要求较高时，可以考虑选择排序；实际适用的场合非常罕见。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -731,7 +728,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -763,6 +760,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -797,20 +801,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -866,7 +870,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -881,6 +885,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1044,7 +1068,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1549,5 +1573,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -153,7 +155,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -208,7 +210,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,7 +247,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -255,7 +257,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -265,7 +267,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -275,7 +277,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -285,7 +287,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -294,28 +296,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -484,6 +476,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -496,7 +493,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  2.4k 字
                 </span>
               
 
@@ -512,7 +509,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -553,12 +550,12 @@
 </ul>
 <p>&emsp;&emsp;在介绍SVM之前，先解释几个概念。来看看下面这堆数据，我们能否画出一条直线将圆形点和方形点分开？</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20171008224923812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20171008224923812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;有点复杂？没关系，我们先来看看下图A中的两组数据，它们之间已经分隔得足够开，因此很容易就可以在图中画出一条直线将两组数据点分开。在这种情况下，这种数据被称为线性可分（ linearly separable ）数据。稍后当直线不能将数据点分开时，我们会对上述假设做一些修改。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20171008224940599?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20171008224940599?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;上述将数据集分隔开来的直线称为分隔超平面（ separating hyperplane ）。上面的数据是二维的，所以此时分隔超平面就萎缩成一条直线了。如果数据时1024维的，那么就需要一个1023维的某某对象来对数据进行分隔。这个1023维的某某对象被称为超平面（ hyperplane ），也就是分类的决策边界。分布在超平面一侧的所有数据都属于某个类别，而分布在另一侧的所有数据则属于另一个类别。</p>
@@ -566,7 +563,7 @@
 <p>&emsp;&emsp;支持向量（ support vector ）就是离分隔超平面最近的那些点。接下来要试着最大化支持向量到分隔面的距离，需要找到此问题的优化求解方法。</p>
 <h2 id="寻找最大间隔"><a href="#寻找最大间隔" class="headerlink" title="寻找最大间隔"></a>寻找最大间隔</h2><p>&emsp;&emsp;分隔超平面的形式可以携程$ w^Tx + b $。要计算点A到分隔超平面的距离，就必须给出点到分隔面的法线或垂线的长度，该值为$ |w^Tx + b| / \begin{Vmatrix} w \end{Vmatrix} $。这里的常数b类似于Logistic回归中的截距$w_0$。这里的向量w和常数b一起描述了所给数据的分隔线或超平面。接下来我们讨论分类器。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20171008225002114?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20171008225002114?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <h3 id="分类器求解的优化问题"><a href="#分类器求解的优化问题" class="headerlink" title="分类器求解的优化问题"></a>分类器求解的优化问题</h3><p>&emsp;&emsp;理解分类器工作原理将有助于理解基于优化问题的分类器求解过程。输入数据给分类器会输出一个类别标签，这相当于一个类似于Sigmoid的函数在作用。下面将使用类似单位阶跃函数对$ w^Tx + b $作用得到$ f(w^Tx + b) $，其中当u &lt; 0时f(u)输出-1，反之输出+1。Logistic那里的类别标签是0或1。</p>
@@ -592,8 +589,8 @@
 <li>使用算法：几乎所有分类问题都可以使用SVM，值得一提的是，SVM本身是一个二分类分类器，对多类问题应用SVM需要对代码做一些修改。</li>
 </ul>
 <p>&emsp;&emsp;到目前为止，我们已经了解了SVM相关的概念，我们当然希望能够通过编程，在数据集上将这些理论付诸实践。下一节将介绍一个简单而又强大的实现算法—序列最小优化（ Sequential MInimal Optimization，SMO ）算法。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -754,7 +751,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -786,6 +783,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -820,20 +824,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -889,7 +893,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -904,6 +908,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1067,7 +1091,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1572,5 +1596,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

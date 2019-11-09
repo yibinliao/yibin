@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -153,7 +155,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -208,7 +210,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,7 +247,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -255,7 +257,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -265,7 +267,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -275,7 +277,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -285,7 +287,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -294,28 +296,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -484,6 +476,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -496,7 +493,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  4.6k 字
                 </span>
               
 
@@ -512,7 +509,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  16 分钟
                 </span>
               
             </div>
@@ -546,14 +543,14 @@
 <h3 id="3-尺度处理"><a href="#3-尺度处理" class="headerlink" title="3.尺度处理"></a>3.尺度处理</h3><p>&emsp;&emsp;在筛选有效正样本时，同时保存了水平，垂直尺度系数，但是实际保存的尺度是归一化映射后的值，即(h - min) * num + w - min + 1,其中h,w表示筛选出的有效正样本相对原始目标的垂直，水平尺度系数，实际上，还是保存的尺度系数，只是在数据结构上，采用哈希映射存储罢了。</p>
 <h3 id="4-判定有效样本"><a href="#4-判定有效样本" class="headerlink" title="4.判定有效样本"></a>4.判定有效样本</h3><p>&emsp;&emsp;程序下一步，会在上面采样生成的所有有效正样本，进行直方图统计，统计出每个尺度下的样本数。例如有2500多个图像文件，计算所有正样本数，统计每个尺度下的正样本数。根据统计结果，剔除掉正样本数少于50的尺度。保存剩下的尺度统计结果，接着，对所有正负样本，统一分配到一个二维矩阵，垂直表示样本数，水平表示样本的8<em>8梯度特征值，直接保存。<br>以上，属于该算法的第一个亮点。<br>&emsp;&emsp;算法主要是用来加速传统的滑动窗口对象检测，通过训练通用的对象估计方法来产生候选对象窗口。作者观察到一般对象都会有定义完好的封闭轮廓，而且通过将相关图像窗口重置为固定大小，就可以通过梯度幅值进行区分。基于以上的观察以及复杂度的考虑，为了明确训练方法，将窗口固定为8</em>8的，并将梯度幅值转化为一个简单的64维的特征来描述这个窗口。这就相当于我们看路上走的人一样，在很远的地方即使我们没看清楚脸，只是看到一个轮廓也能识别出是不是我们认识的人，反而，如果脸贴着脸去看一个人可能会认不出来。<br>&emsp;&emsp;也就是作者发现，在固定窗口的大小下，物体与背景的梯度模式有所不同。如下图所示。图（a）中绿框代表背景，红框代表物体。如果把这些框都resize成固定大小，比如8X8，然后求出8X8这些块中每个点的梯度（Normed Gradient，简称NG特征，叫赋范梯度特征，就是计算梯度范数，即<code>!$\sqrt{(g_x^2 + g_y^2)}$</code>,实际就是该点的L2范数梯度，但是作者实现时，采用-1,0,1方式计算gx或者gy,因此，用|gx| + |gy|近似代替梯度的L2范数），可以明显看到物体与背景的梯度模式的差别，如图1（c）所示，物体的梯度分布呈现出较为杂乱的模式，而背景的较为单一和清楚。其实这个道理很浅显，就是图像中背景区域往往呈现出homogeneous的特性，早期的图像区域分割方法就是依靠这种特性来做的。然后我个人觉得这里不一定要用梯度，用其他一些统计特征甚至是图像特征都有可能得到类似的结果。<br>&emsp;&emsp;所以，作者首先将所有的标注样本，用不同尺度缩放采样，将采样出的有效正样本统一缩放到8 * 8，计算NG特征，也就是下面图中a生成c在过程。这样，通过SVM训练这些NG特征，得到目标和背景的第一次区分模型。<br>&emsp;&emsp;下面是原文的解释<br>&emsp;&emsp;对象一般是具有很好定义封闭轮廓和中心的。重置窗口的时候，就相当于将现实中的对象缩小到一个固定大小，因为在封闭的轮廓中，图像梯度变化很小，所以它是一个很好的可区分特征，就像是图1中，轮船和人在颜色，形状，纹理，光照等方面都有很大的不同，他们在梯度空间都存在共性。为了有效地利用观察结果，我们首先将输入图像重置为不同尺度的，在不同的尺度下计算梯度。然后再重置为取8 * 8大小的框，作为一个对应图像的64维的NG特征。<br>我们采用的NG特征，是一个密集的且紧凑的objectness特性，有以下几点优势：首先，由于归一化了支持域，所以无论对象窗口如何改变位置，尺度以及纵横比，它对应的NG特征基本不会改变。也就是说，NG特征是对于位置，尺度，纵横比是不敏感的，这一点是对于任意类别对象检测是很有用的。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170823181219294?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="700" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170823181219294?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="700"></div>
 <p></p>
 
 <p>&emsp;&emsp;图1 尽管对象（红色）和背景（绿色），在图像空间（a）呈现出了很大的不同，通过一个适当的尺度和纵横比，我们将其分别重置为固定大小(b)，他们对应的NG特征(c)表现出很大的共性,基于NG特征，我们学习了一个简单的64D线性模型（d），用来筛选对象窗口。<br>这种不敏感的特性是一个好的对象检测方法应该具备的。第二，NG特征的紧凑性，使得计算和核实更加有效率，而且能够很好的应用在实时应用程序中。<br>NG特征的缺点就是识别能力不够。但一般而言，会采用检测器来最终缺点结果的误报率。</p>
 <h2 id="二、两级SVM训练："><a href="#二、两级SVM训练：" class="headerlink" title="二、两级SVM训练："></a>二、两级SVM训练：</h2><h3 id="1-SVM第一级训练"><a href="#1-SVM第一级训练" class="headerlink" title="1.SVM第一级训练"></a>1.SVM第一级训练</h3><p>&emsp;&emsp;首先，算法传递进入第一级SVM的样本总数，在超过SVM默认参数值时，采用SVM默认训练总样本数。用所有正样本以及剩下的数量采用随机从原负样本中抽取。即，负样本在这种情况下，不是全部参加SVM第一级训练。而是随机抽取一部分，保证总样本数达到SVM默认训练总样本数。<br>&emsp;&emsp;算法做一些SVM的初始化，涉及到样本标签Y，实际上，正样本默认都为有标签，以及SVM参数初始化等。<br>&emsp;&emsp;通过第一级SVM训练后，算法生成第一级SVM模型，转换成8 * 8，并归一化到1~255，保存。该模型w是用来下文中投票打分的，为第二级SVM学习做准备。</p>
 <h3 id="2-二值化模型参数w"><a href="#2-二值化模型参数w" class="headerlink" title="2.二值化模型参数w"></a>2.二值化模型参数w</h3><p>&emsp;&emsp;首先通过上面的训练，我们可以得到分类的模型线性w，第一个要二值化的目标就是它，二值化的思想可以简单想象成找若干个基向量，并用这些基向量的线性组合来记表示w， 而且这些基向量的每一维只能取1或者-1（二值嘛）。那么假设我们用了Nw个基向量，每个基向量为aj, j = 1,…,Nw，那么就有<code>!$ w ≈  \sum_{j=1}^{N_w} \beta_j \alpha_j$</code>。具体模型的二值化近似可以按如下算法1的步骤进行：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170823184337349?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170823184337349?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="400"></div>
 <p></p>
 
 <p>&emsp;&emsp;算法1的步骤也很明确，每一个都生成一个基向量，此基向量每一维都是由当前残差的符号决定，然后用当前残差减去残差在这基向量的投影（相当于去掉模型在这一维上的分量）。但在计算中因为二进制位只能为0或者1，所以为了处理方便，取：$\alpha_j^+∈{ 0,1 }^{64}$,那么就可以将基向量表示为$\alpha_j = \alpha_j^+ - \overline{\alpha_j^+}$。即基向量二进制与该二进制表示的补。<br>&emsp;&emsp;也就是说，αj表示基向量{-1,1}，βj表示校准系数，同时，将每个基向量，映射到一个64位类型的数据中。<br>这里，实际上采用Gram-Schmidt正交化，只取了包含大部分信息的前Nw个正交向量作为输出，目的也是为了降低计算量。二值化的目的在于后期位运算，后面还会把NG特征也二值化。直接采用硬件指令大幅度地提升速度。<br>&emsp;&emsp;代码中，Nw取2，也就是SVM生成的W 是8 * 8矩阵，矩阵元素任意值，通过这个二值化过程，生成2个基向量，每个基向量完全覆盖了W中每个元素，但是此时在基向量中，每个元素对应的取值变成0或者1，因此，原w的64个元素，拼接成了一个64位的单个数据，即基向量。同时，对应该基向量的校准系数，算法为了后期加速，只近似处理高4位的数据，因此，校准系数只有保存4个，且都是一样的值，但是由于后期位移运算，这里就把校准值放置到了对应bit位。于是，2个基向量，生成8个校准系数，2个64位的数据。</p>
@@ -575,14 +572,14 @@
 <p>&emsp;&emsp;打分越高，越接近目标。实际上，算法生成的就是打分窗口，也就是所为的对象状态。下面测试的时候，根据打分窗口与标注的测试窗口重叠率大于0.5就认为检测到了。<br>接着，作者开始绘制结果，根据检测出的候选框与每个测试标注框计算重叠率，大于0.5，就认为检测到了，否则score为0未检到。之后，计算平均重叠率和平均检测率。</p>
 <p>这里解释下重叠率：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170823185011109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="700" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170823185011109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="800" height="700"></div>
 <p></p>
 
 <p>&emsp;&emsp;上面的精度曲线称为DR-#WIN curves，源自TPAMI 2012的一篇论文：Measuring the objectness of image windows。原文还提出了将窗口数量比如[[0,5000]归一化到[0,1]之间，用曲线下的面积作为目标检测的度量结果，并称之为the area under the curve(AUC)，这样AUC的范围就在[0,1]之间了。</p>
 <p>&emsp;&emsp;DR的计算是参考The PASCAL Visual Object Classes (VOC) Challenge，目标检测任务中DR的计算的是true/false positive精度，将算法检测目标结果放到groud truth中，将“预测目标区域与groud truth区域的交集”除以“预测目标区域与groud truth区域的并集”作为DR：</p>
 <p>&emsp;&emsp;DR自少在50%以上才算目标检测正确，其实，50%已经是很低的了，几乎不能做为检测结果。</p>
 <p>&emsp;&emsp;自己在程序中加了单张图片测试的显示部分，如果有同学需要可以私信我。</p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -741,7 +738,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -773,6 +770,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -807,20 +811,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -876,7 +880,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -891,6 +895,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1054,7 +1078,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1559,5 +1583,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

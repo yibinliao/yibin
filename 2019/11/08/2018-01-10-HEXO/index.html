@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -158,7 +160,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -213,7 +215,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -250,7 +252,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -260,7 +262,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -270,7 +272,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -280,7 +282,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -290,7 +292,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -299,28 +301,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -489,6 +481,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -501,7 +498,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  4.3k 字
                 </span>
               
 
@@ -517,7 +514,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  18 分钟
                 </span>
               
             </div>
@@ -557,47 +554,47 @@
 <p>&emsp;&emsp;Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服 务，站点可以被免费托管在 Github 上，你可以选择使用 Github Pages 默 认提供的域名 github.io 或者自定义域名来发布站点。Github Pages 支持 自动利用 Jekyll 生成站点，也同样支持纯 HTML 文档，将你的 Jekyll 站 点托管在 Github Pages 上是一个不错的选择。</p>
 <p>&emsp;&emsp;网站首页就是搭建GitHub Pages的过程其中第一步之后，选择不同的git客户端选项，会出现相应的初始化步骤，很人性化。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110111003603?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110111003603?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;大家可以跟着上面的链接先在自己的github新建仓库，仓库名称为username.github.io，其中username要替换成你github的名称，比如我的github名称为wordzzzz，所以我新建的仓库就应该是wordzzzz.github.io。那么等我以后搭建好了我的博客，我就可以通过<a href="https://wordzzzz.github.io来访问我的主页了。" target="_blank" rel="noopener">https://wordzzzz.github.io来访问我的主页了。</a></p>
 <p>&emsp;&emsp;到现在为止，只是搭建博客的准备工作。搭建博客的下一步是选择合适的静态博客框架。</p>
 <h2 id="jekyll-or-hexo"><a href="#jekyll-or-hexo" class="headerlink" title="jekyll or hexo"></a>jekyll or hexo</h2><p>&emsp;&emsp;目前有两大静态博客主流框架：<a href="http://jekyllcn.com/" target="_blank" rel="noopener">jekyll</a>和<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a>。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110111311091?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110111311091?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110111420247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110111420247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;我一开始用的是jekyll，这是中文社区翻译出来的<a href="http://jekyllcn.com/" target="_blank" rel="noopener">中文开发文档</a>。我使用的主题是<a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a>，开发文档很详细。但是后来由于jekyll体验不是很好（中文资料少，我英语比较差我会说嘛），依赖环境总是出问题（需要安装ruby），markdown采用的是Kramdown（Kramdown对我之前的一些博客格式支持的不是很好，我自己写文档用的都是小书匠，然后发表到CSDN，所以并不想花时间在改格式上面），而且我使用的这个主题是个人维护的，种种原因导致最后做出来的博客很难符合我的胃口，最后被我扔进了停尸房<a href="https://github.com/WordZzzz/jekyll_mysite" target="_blank" rel="noopener">jekyll_mysite</a>。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110111512090?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110111512090?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110111533728?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110111533728?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;就在我将要放弃之时，hexo拯救了我。对，没错，它有<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">中文开发文档</a>。而在hexo界，使用最多的主题就是<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next</a>了。光是看到这两份资料，我就已经激动的不行了，这种扁平化设计的网站，不就正是我需要的么。加上详尽的开发文档和丰富的第三方接口，让我对它爱不释手。最终定稿了自己的个人博客，存储在github<a href="https://wordzzzz.github.io/" target="_blank" rel="noopener">wordzzzz的个人博客-托管于github</a>和gitee<a href="https://wordzzzz.gitee.io/" target="_blank" rel="noopener">wordzzzz的个人博客-托管于gitee</a>上。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110142732584?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110142732584?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110142739639?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110142739639?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <h2 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h2><p>&emsp;&emsp;next主题支持三种外观显示，支持多国语言，5套代码高亮主题，可以深度定制。在其<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Github</a>上，更是有三个主题的代表作，其中我最喜欢的莫过于基于Muse scheme的<a href="https://notes.wanghao.work/" target="_blank" rel="noopener">wanghao的博客</a>。于是，我就在wanghao的博客的基础上进行了相应的更改，形成了我现在的博客，主题文件全部在我的<a href="https://github.com/WordZzzz/hexo-next" target="_blank" rel="noopener">github</a>上，欢迎大家fork、star、follow。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20180110114341558?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></div>
+<div align="center"><img src="http://img.blog.csdn.net/20180110114341558?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div>
 <p></p>
 
 <p>&emsp;&emsp;其实先按照hexo配置开发环境，再按照next文档配置站点文件，完全可以轻松搭建起自己的博客。但是还是藏不住内心那颗年轻的心啊，终究还是搜罗了一些好玩的东西放到了自己的博客上，比如音乐播放器。</p>
 <p>&emsp;&emsp;下面我先简单介绍一下基于github平台、hexo框架的next主题博客开发步骤：</p>
 <ul>
-<li><a href="">Github上新建username.github.io仓库并初始化</a></li>
+<li><a href>Github上新建username.github.io仓库并初始化</a></li>
 <li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">PC端安装hexo及其依赖项并熟悉开发流程</a></li>
 <li><a href="https://github.com/WordZzzz/hexo-next" target="_blank" rel="noopener">下载我的主题文件</a>或者<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">下载next主题文件</a></li>
 <li><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">按照next官方教程验证主题</a></li>
@@ -650,7 +647,7 @@
 <p>&emsp;&emsp;然后找到代码行：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">&#123;% if display_toc and toc(page.content).length &gt; 1 %&#125;</span><br><span class="line"><span class="comment">&lt;!--noindex--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"post-toc-wrap motion-element sidebar-panel sidebar-panel-active"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;在此</section>的上方添加一个</div>，如下所示：</p>
+<p>&emsp;&emsp;在此的上方添加一个，如下所示：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--my custom code begin--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--my custom code end--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">&#123;% if display_toc and toc(page.content).length &gt; 1 %&#125;</span><br><span class="line"><span class="comment">&lt;!--noindex--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"post-toc-wrap motion-element sidebar-panel sidebar-panel-active"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-toc"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="自定义区域的初始化设置"><a href="#自定义区域的初始化设置" class="headerlink" title="自定义区域的初始化设置"></a>自定义区域的初始化设置</h4><p>&emsp;&emsp;在theme/next/source/css/_custom文件夹下打开custom.styl文件，向里面增添下列代码：</p>
@@ -682,13 +679,13 @@
 <h4 id="创建按钮区域"><a href="#创建按钮区域" class="headerlink" title="创建按钮区域"></a>创建按钮区域</h4><p>&emsp;&emsp;在theme/next/layout/_custom/文件夹下新建一个myapcontroler.swig的文件。向其中添加以下代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/src/Aplayer-Controler.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"AP-controler"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> myapc=<span class="keyword">new</span> APlayer_Controler(&#123;</span></span><br><span class="line"><span class="javascript">		APC_dom:$(<span class="string">'#AP-controler'</span>),</span></span><br><span class="line"><span class="actionscript">		aplayer:ap, <span class="comment">//此为绑定的aplayer对象</span></span></span><br><span class="line"><span class="actionscript">		attach_right:<span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">		position:&#123;top:<span class="string">'300px'</span>,bottom:<span class="string">''</span>&#125;,</span></span><br><span class="line"><span class="actionscript">		fixed:<span class="literal">true</span>,</span></span><br><span class="line">		btn_width:100,</span><br><span class="line">		btn_height:120,</span><br><span class="line"><span class="actionscript">		img_src:[<span class="string">'http://oty1v077k.bkt.clouddn.com/bukagirl.jpg'</span>,</span></span><br><span class="line"><span class="actionscript">				<span class="string">'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg'</span>,</span></span><br><span class="line"><span class="actionscript">				<span class="string">'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg'</span>,</span></span><br><span class="line"><span class="actionscript">				<span class="string">'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'</span>],</span></span><br><span class="line"><span class="actionscript">		img_style:&#123;repeat:<span class="string">'no-repeat'</span>,position:<span class="string">'center'</span>,size:<span class="string">'contain'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">		ctrls_color:<span class="string">'rgba(173,255,47,0.8)'</span>,</span></span><br><span class="line"><span class="actionscript">		ctrls_hover_color:<span class="string">'rgba(255,140,0,0.7)'</span>,</span></span><br><span class="line"><span class="actionscript">		tips_on:<span class="literal">true</span>,</span></span><br><span class="line">		tips_width:140,</span><br><span class="line">		tips_height:25,</span><br><span class="line"><span class="actionscript">		tips_color:<span class="string">'rgba(255,255,255,0.6)'</span>,</span></span><br><span class="line">		tips_content:&#123;&#125;,</span><br><span class="line">		timeout:30</span><br><span class="line">	&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="将控制按钮加入body页面"><a href="#将控制按钮加入body页面" class="headerlink" title="将控制按钮加入body页面"></a>将控制按钮加入body页面</h4><p>&emsp;&emsp;在theme/next/layout文件夹下打开_layout.swig文件，在</body>前添加以下代码：</p>
+<h4 id="将控制按钮加入body页面"><a href="#将控制按钮加入body页面" class="headerlink" title="将控制按钮加入body页面"></a>将控制按钮加入body页面</h4><p>&emsp;&emsp;在theme/next/layout文件夹下打开_layout.swig文件，在<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script>前添加以下代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include '_custom/myapcontroler.swig' %&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;到此，自定义音乐播放控制边栏就基本完成，完成整个配置需要根据自己的主题背景进一步修改完善。</p>
 <hr>
-<p><strong><font color="red" size=3 face="仿宋">本教程到此结束，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">本教程到此结束，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -851,7 +848,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -883,6 +880,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -917,20 +921,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -986,7 +990,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -1001,6 +1005,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1164,7 +1188,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1669,5 +1693,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>

@@ -107,7 +107,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/folder/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/folder/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/folder/images/favicon-16x16-next.png?v=5.1.4">
@@ -124,6 +124,8 @@
 
 
 
+
+  <link rel="alternate" href="/folder/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -175,7 +177,7 @@
     root: '/folder/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -230,7 +232,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,7 +269,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/folder/%20" rel="section">
+          <a href="/folder/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -277,7 +279,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/folder/about/%20" rel="section">
+          <a href="/folder/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -287,7 +289,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/folder/tags/%20" rel="section">
+          <a href="/folder/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -297,7 +299,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/folder/categories/%20" rel="section">
+          <a href="/folder/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -307,7 +309,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/folder/archives/%20" rel="section">
+          <a href="/folder/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -316,28 +318,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/folder/schedule/%20" rel="section">
+        <li class="menu-item menu-item-guestbook">
+          <a href="/folder/guestbook/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/folder/sitemap.xml%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
+            留言板
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/folder/404.html%20" rel="section">
+          <a href="/folder/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -506,6 +498,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -518,7 +515,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                   字
+                  2.1k 字
                 </span>
               
 
@@ -534,7 +531,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -564,7 +561,7 @@
 <li><strong>编者: WordZzzz</strong></li>
 </ul>
 <hr>
-<p><strong><font color="black" size=5 face="仿宋">1.  JetPack3.0下载与安装</font></strong></p>
+<p><strong><font color="black" size="5" face="仿宋">1.  JetPack3.0下载与安装</font></strong></p>
 <p>本人PC端使用虚拟机安装Ubuntu14.04系统进行开发，需要有效联网。</p>
 <p>1.首先在自己的home目录下创建Jetson文件夹：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/Jetson</span><br><span class="line">$ cd ~/Jetson</span><br></pre></td></tr></table></figure>
@@ -575,123 +572,123 @@
 
 <p>之后出现如下图所示，单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514162457089?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514162457089?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>之后会显示安装路径，单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514163056458?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514163056458?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>4.接下来是开发板选型，这里我选TX1，单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514163208366?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514163208366?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>5.输入root用户密码：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514163407807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514163407807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>6.联网获取安装包信息，此处必须联网，否则出不来安装信息，选完安装信息之后单击Next（ps：一般默认即可，只安装Jetpack不刷机的话就把下面的Target-Jetson TX1的Action一栏全部改为no action；由于我的已经安装完毕，所以Action一栏都是no action）：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514164423772?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514164423772?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>7.接受所选组件的许可协议，全部同意并单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514164513150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514164513150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>8.报错的话就按提示安装依赖库后再进行Jetpack安装：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514165036562?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514165036562?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>9.安装完成后如下图所示，单机Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514165440464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514165440464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>10.点击Finish即可完成安装，最好不要勾选移除安装包：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514165617027?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514165617027?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
-<p><strong><font color="black" size=5 face="仿宋">2.  刷机</font></strong><br>&#160;&#160;&#160;&#160;刷机过程需要重复上述1-5步，并且在第6步中Target-Jetson TX1的Action一栏改为需要的各个软件安装版本。所以刷机从第6步开始介绍.<br>6.联网获取安装包信息，此处必须联网，否则出不来安装信息，选完安装信息之后单击Next（一般默认即可）：</p>
+<p><strong><font color="black" size="5" face="仿宋">2.  刷机</font></strong><br>&#160;&#160;&#160;&#160;刷机过程需要重复上述1-5步，并且在第6步中Target-Jetson TX1的Action一栏改为需要的各个软件安装版本。所以刷机从第6步开始介绍.<br>6.联网获取安装包信息，此处必须联网，否则出不来安装信息，选完安装信息之后单击Next（一般默认即可）：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514170240735?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514170240735?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>7.接受所选组件的许可协议，全部同意并单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514164513150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514164513150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 8.该组件管理器将继续安装。一旦主机的安装步骤完成后，单击下一步按钮继续安装目标组件。
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514165440464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514165440464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>9.a.如果在6中取消选择Flash OS的组件管理器（即不烧写系统，只烧写某些组件），将需要输入IP地址，用户名和密码来建立ssh连接到目标设备：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514171202482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514171202482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>9.b.如果在6中选择Flash OS的组件管理器，需要选择适合的特定环境中的网络布局：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514171121200?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514171121200?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 10.a.如果选择了通过路由器/交换机设备访问互联网的布局，你会被要求选择哪个接口用于上网。
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514171519491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514171519491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>10.b.如果您选择的设备通过主机IP获得通过指定DHCP服务器主机和访问互联网上的布局，您必须选择哪个接口是用于上网，并且将被用于目标接口。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514171554051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514171554051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>11.烧写确认，单击Next：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514173025649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514173025649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>12.之后会弹出POST窗口来引导你开启USB强制恢复模式：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170521110312924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170521110312924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>&#160;&#160;&#160;&#160;TX1与主机使用usb连接，开启USB强制恢复模式（关机情况下，按一下POWER键，再长按REC键的同时点按RESET键，两秒后松开REC键）此时虚拟机会弹出NVIDIA设备：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514172001604?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514172001604?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>可以lsusb确认一下：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514172036136?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514172036136?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="200"></div>
 <p></p>
 
 <p>13.在POST窗口中回车，开始安装：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514172117995?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514172117995?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>14.系统安装完成后板子会重启。如果TX1重启后出现了Ubuntu的GUI界面，说明系统已经安装完成。重启完之后POST窗口会提示你输入IP地址，这里如果输入正确，等待十分钟左右就会进入下一个界面；如果失败，最好查看一下TX1现在的IP。接下来就需要安装CUDA、OpenCV等组件。在按Enter继续安装之前，需要确保TX1已经连网外网，如果校园网需要登录网关这样的，先将网关登录好再继续，因为安装组件的时候，需要安装一些依赖库，需要有外网的情况下才能进行。按Enter继续后，会出现提示信息，确定TX1的IP地址，手动输入TX1的IP地址后，按回车继续，稍等一会儿，会出现如下对话框（和9a里的一样，如果执行的9a而不是9b，这里就不会再出现确认信息）：</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514171202482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514171202482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>15.一路NEXT，再次进入POST界面，此时使用SSH远程服务，无需下载线。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514172710005?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514172710005?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 <p>16.安装完之后，程序自动关闭POST，回到如下界面，点击FINISH完成安装。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514172808920?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514172808920?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
-<p><strong><font color="black" size=5 face="仿宋">3.  测试</font></strong><br>Jetpack自动编译所有例程，CUDA例程可以在以下目录中找到：</p>
+<p><strong><font color="black" size="5" face="仿宋">3.  测试</font></strong><br>Jetpack自动编译所有例程，CUDA例程可以在以下目录中找到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;JetPack_Install_Dir&gt; / NVIDIA_CUDA- &lt;版本&gt; _samples</span><br></pre></td></tr></table></figure>
 <p>可以通过重新编译运行示例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SMS=53 EXTRA_LDFLAGS=--unresolved-symbols=ignore-in-shared-libs TARGET_ARCH=aarch64 make</span><br></pre></td></tr></table></figure>
@@ -699,11 +696,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/ubuntu/NVIDIA_CUDA-&lt;version&gt;_Samples/bin/aarch64/linux/release/</span><br></pre></td></tr></table></figure>
 <p>命令行运行或双击运行：<br>例如，当您运行oceanFFT样品，将显示如下画面。</p>
 <p></p>
-<div align=center><img src="http://img.blog.csdn.net/20170514174244191?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400" /></div>
+<div align="center"><img src="http://img.blog.csdn.net/20170514174244191?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" height="400"></div>
 <p></p>
 
 
-<p><strong><font color="black" size=5 face="仿宋">4.  开发前准备工作</font></strong></p>
+<p><strong><font color="black" size="5" face="仿宋">4.  开发前准备工作</font></strong></p>
 <p><strong>更新源：</strong></p>
 <p>&#160;&#160;&#160;&#160;因为默认源会找不到我们下述要用的一些依赖库和安装包，所以需要加入国内源，本例中采用的是中科大的源。值得注意的是，如果你之后回头来刷固件，一定还要把源换回来，否则有可能会安装失败。所以我们先做一下备份：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
@@ -743,8 +740,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure>
 
 <p>&#160;&#160;&#160;&#160;下篇博文将以JetPack3.0为例，向大家介绍如何使用Nsight进行程序开发。</p>
-<p><strong><font color="red" size=3 face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
-<p><strong><font color="red" size=3 face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">系列教程持续发布中，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">完的汪(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -894,7 +891,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/folder/archives/%20%7C%7C%20archive">
+                <a href="/folder/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">日志</span>
@@ -926,6 +923,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/folder/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -960,20 +964,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                ��������
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.csdn.net/u011475210" title="CSDN������ҳ" target="_blank">CSDN������ҳ</a>
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.gitee.io" title="�й�վ��ҳ" target="_blank">�й�վ��ҳ</a>
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://wordzzzz.github.io" title="ȫ��վ��ҳ" target="_blank">ȫ��վ��ҳ</a>
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
                   </li>
                 
               </ul>
@@ -1013,7 +1017,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
+    <span title="Site words total count">155.1k</span>
   
 </div>
 
@@ -1028,6 +1032,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1191,7 +1215,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "/.deploy_git/search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1676,5 +1700,18 @@
   <script type="text/javascript" src="/folder/js/src/exturl.js?v=5.1.4"></script>
 
 
-</body>
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/folder/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </html>
