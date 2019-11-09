@@ -18,8 +18,18 @@
   
     
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <script src="/exclusive/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/exclusive/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "0b8451ca"
+    });
+  daovoice('update');
+  </script>
 
 
 
@@ -47,7 +57,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/exclusive/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -99,21 +109,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/exclusive/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/exclusive/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exclusive/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exclusive/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exclusive/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/exclusive/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -125,7 +135,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="天然呆" type="application/atom+xml" />
+  <link rel="alternate" href="/exclusive/atom.xml" title="天然呆" type="application/atom+xml" />
 
 
 
@@ -135,13 +145,13 @@
 <meta name="description" content="转载请注明作者和出处：http:&#x2F;&#x2F;blog.csdn.net&#x2F;u011475210 代码地址：https:&#x2F;&#x2F;github.com&#x2F;WordZzzz&#x2F;ML&#x2F;tree&#x2F;master&#x2F;Ch07 操作系统：WINDOWS 10 软件版本：python-3.6.2-amd64 编&amp;emsp;&amp;emsp;者：WordZzzz   前言&amp;emsp;&amp;emsp;终于，分类问题要收尾了。 &amp;emsp;&amp;em">
 <meta name="keywords" content="ML,python3,AdaBoost">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《机器学习实战》之AdaBoost算法（1）算法概述">
-<meta property="og:url" content="http:&#x2F;&#x2F;liaoyibin.top&#x2F;yibinliao.github&#x2F;2019&#x2F;11&#x2F;08&#x2F;2017-11-06-ml-18&#x2F;index.html">
+<meta property="og:title" content="【转】&quot;《机器学习实战》之AdaBoost算法（1）算法概述&quot;">
+<meta property="og:url" content="http:&#x2F;&#x2F;lyibin.gitee.io&#x2F;exclusive&#x2F;2019&#x2F;11&#x2F;08&#x2F;2017-11-06-ml-18&#x2F;index.html">
 <meta property="og:site_name" content="天然呆">
 <meta property="og:description" content="转载请注明作者和出处：http:&#x2F;&#x2F;blog.csdn.net&#x2F;u011475210 代码地址：https:&#x2F;&#x2F;github.com&#x2F;WordZzzz&#x2F;ML&#x2F;tree&#x2F;master&#x2F;Ch07 操作系统：WINDOWS 10 软件版本：python-3.6.2-amd64 编&amp;emsp;&amp;emsp;者：WordZzzz   前言&amp;emsp;&amp;emsp;终于，分类问题要收尾了。 &amp;emsp;&amp;em">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;img.blog.csdn.net&#x2F;20171016192150873?watermark&#x2F;2&#x2F;text&#x2F;aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70&#x2F;gravity&#x2F;SouthEast">
-<meta property="og:updated_time" content="2018-04-26T09:44:30.000Z">
+<meta property="og:updated_time" content="2019-11-09T07:56:33.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;img.blog.csdn.net&#x2F;20171016192150873?watermark&#x2F;2&#x2F;text&#x2F;aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTQ3NTIxMA==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70&#x2F;gravity&#x2F;SouthEast">
 
@@ -150,10 +160,10 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/exclusive/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -173,13 +183,13 @@
 
 
 
-  <link rel="canonical" href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-06-ml-18/"/>
+  <link rel="canonical" href="http://lyibin.gitee.io/exclusive/2019/11/08/2017-11-06-ml-18/"/>
 
 
 
 
 
-  <title>《机器学习实战》之AdaBoost算法（1）算法概述 | 天然呆</title>
+  <title>【转】"《机器学习实战》之AdaBoost算法（1）算法概述" | 天然呆</title>
   
 
 
@@ -217,7 +227,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/exclusive/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">天然呆</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +255,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/exclusive/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -255,7 +265,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/exclusive/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -265,7 +275,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/exclusive/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -275,7 +285,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/exclusive/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -285,7 +295,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/exclusive/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -295,7 +305,7 @@
       
         
         <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook/" rel="section">
+          <a href="/exclusive/guestbook/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
             
@@ -305,7 +315,7 @@
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
+          <a href="/exclusive/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -380,12 +390,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-06-ml-18/">
+    <link itemprop="mainEntityOfPage" href="http://lyibin.gitee.io/exclusive/exclusive/2019/11/08/2017-11-06-ml-18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宜彬">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/myAvatar.jpeg">
+      <meta itemprop="image" content="/exclusive/uploads/myAvatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -397,11 +407,13 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">《机器学习实战》之AdaBoost算法（1）算法概述</h2>
+          <h2 class="post-title" itemprop="name headline">【转】"《机器学习实战》之AdaBoost算法（1）算法概述"</h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+		  
+		  
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -425,8 +437,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-26T17:44:30+08:00">
-                2018-04-26
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-09T15:56:33+08:00">
+                2019-11-09
               </time>
             
           </span>
@@ -444,7 +456,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98/" itemprop="url" rel="index">
+                  <a href="/exclusive/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98/" itemprop="url" rel="index">
                     <span itemprop="name">机器学习实战</span>
                   </a>
                 </span>
@@ -461,7 +473,7 @@
 
           
           
-             <span id="/2019/11/08/2017-11-06-ml-18/" class="leancloud_visitors" data-flag-title="《机器学习实战》之AdaBoost算法（1）算法概述">
+             <span id="/exclusive/2019/11/08/2017-11-06-ml-18/" class="leancloud_visitors" data-flag-title="【转】"《机器学习实战》之AdaBoost算法（1）算法概述"">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -596,7 +608,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-06-ml-18/" title="《机器学习实战》之AdaBoost算法（1）算法概述">http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-06-ml-18/</a>
+    <a href="http://lyibin.gitee.io/exclusive/2019/11/08/2017-11-06-ml-18/" title="【转】"《机器学习实战》之AdaBoost算法（1）算法概述"">http://lyibin.gitee.io/exclusive/2019/11/08/2017-11-06-ml-18/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -611,11 +623,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ML/" rel="tag"># ML</a>
+            <a href="/exclusive/tags/ML/" rel="tag"># ML</a>
           
-            <a href="/tags/python3/" rel="tag"># python3</a>
+            <a href="/exclusive/tags/python3/" rel="tag"># python3</a>
           
-            <a href="/tags/AdaBoost/" rel="tag"># AdaBoost</a>
+            <a href="/exclusive/tags/AdaBoost/" rel="tag"># AdaBoost</a>
           
         </div>
       
@@ -643,8 +655,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/08/2017-11-05-ml-17/" rel="next" title="《机器学习实战》之支持向量机（4）核函数及其实现">
-                <i class="fa fa-chevron-left"></i> 《机器学习实战》之支持向量机（4）核函数及其实现
+              <a href="/exclusive/2019/11/08/2017-11-05-ml-17/" rel="next" title="【转】"《机器学习实战》之支持向量机（4）核函数及其实现"">
+                <i class="fa fa-chevron-left"></i> 【转】"《机器学习实战》之支持向量机（4）核函数及其实现"
               </a>
             
           </div>
@@ -653,8 +665,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/08/2017-11-06-ml-19/" rel="prev" title="《机器学习实战》之AdaBoost算法（2）算法实现">
-                《机器学习实战》之AdaBoost算法（2）算法实现 <i class="fa fa-chevron-right"></i>
+              <a href="/exclusive/2019/11/08/2017-11-06-ml-19/" rel="prev" title="【转】"《机器学习实战》之AdaBoost算法（2）算法实现"">
+                【转】"《机器学习实战》之AdaBoost算法（2）算法实现" <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -683,6 +695,11 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQ1Mi8yMzk1Mg=="></div>
+    </div>
 
   
 
@@ -724,7 +741,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/uploads/myAvatar.jpeg"
+                src="/exclusive/uploads/myAvatar.jpeg"
                 alt="宜彬" />
             
               <p class="site-author-name" itemprop="name">宜彬</p>
@@ -736,9 +753,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%7C%7C%20archive">
+                <a href="/exclusive/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">123</span>
+                  <span class="site-state-item-count">122</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -748,7 +765,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                <a href="/exclusive/categories/index.html">
                   <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -759,7 +776,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/exclusive/tags/index.html">
                   <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -770,7 +787,7 @@
 
           
             <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
+              <a href="/exclusive/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -800,6 +817,10 @@
                 
             </div>
           
+		  
+		  <div id="music163player">
+		     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=3067283127&auto=1&height=32"></iframe>
+		  </div>
 
           
           
@@ -853,6 +874,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -878,7 +906,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">155.1k</span>
+    <span title="Site words total count">148.7k</span>
   
 </div>
 
@@ -925,13 +953,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
 
     
 
@@ -970,69 +991,69 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/exclusive/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/exclusive/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/exclusive/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/exclusive/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/exclusive/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/exclusive/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/exclusive/lib/canvas-nest/canvas-nest.min.js"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/exclusive/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/exclusive/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/exclusive/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/exclusive/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/exclusive/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/exclusive/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/exclusive/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -1056,6 +1077,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1082,7 +1114,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "/exclusive/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1523,11 +1555,11 @@
   
   
   
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/exclusive/lib/needsharebutton/needsharebutton.css">
 
   
   
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/exclusive/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
@@ -1573,12 +1605,12 @@
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/exclusive/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/exclusive/js/src/scroll-cookie.js?v=5.1.4"></script>
 
 
   
-  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/exclusive/js/src/exturl.js?v=5.1.4"></script>
 
 
   
@@ -1586,13 +1618,14 @@
    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
    <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
 
+  
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
 
-
-<script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.9/love.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+<script src="/exclusive/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
