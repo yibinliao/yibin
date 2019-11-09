@@ -146,7 +146,7 @@
 <meta name="keywords" content="ML,python3,决策树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【转】&quot;《机器学习实战》之决策树算法（1）算法概述&quot;">
-<meta property="og:url" content="http:&#x2F;&#x2F;liaoyibin.top&#x2F;yibinliao.github&#x2F;2019&#x2F;11&#x2F;08&#x2F;2017-11-03-ml-7&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;yibinliao&#x2F;yibinliao.github&#x2F;2019&#x2F;11&#x2F;08&#x2F;2017-11-03-ml-7&#x2F;index.html">
 <meta property="og:site_name" content="天然呆">
 <meta property="og:description" content="转载请注明作者和出处：http:&#x2F;&#x2F;blog.csdn.net&#x2F;u011475210 代码地址：https:&#x2F;&#x2F;github.com&#x2F;WordZzzz&#x2F;ML&#x2F;tree&#x2F;master&#x2F;Ch03 操作系统：WINDOWS 10 软件版本：python-3.6.2-amd64 编&amp;emsp;&amp;emsp;者：WordZzzz   前言：&amp;emsp;&amp;emsp;本渣渣（WordZzzz直接被舍友叫成了“">
 <meta property="og:locale" content="zh-Hans">
@@ -184,7 +184,7 @@
 
 
 
-  <link rel="canonical" href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-03-ml-7/"/>
+  <link rel="canonical" href="https://github.com/yibinliao/yibinliao.github/2019/11/08/2017-11-03-ml-7/"/>
 
 
 
@@ -391,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-03-ml-7/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yibinliao/yibinliao.github/2019/11/08/2017-11-03-ml-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宜彬">
@@ -544,7 +544,7 @@
         <hr>
 <ul>
 <li><strong>转载请注明作者和出处：<a href="http://blog.csdn.net/u011475210" target="_blank" rel="noopener">http://blog.csdn.net/u011475210</a></strong></li>
-<li><strong>代码地址：<a href="https://github.com/WordZzzz/ML/tree/master/Ch03" target="_blank" rel="noopener">https://github.com/WordZzzz/ML/tree/master/Ch03</a></strong></li>
+<li><strong>代码地址：<a href="https://github.com/WordZzzz/ML/tree/master/Ch03">https://github.com/WordZzzz/ML/tree/master/Ch03</a></strong></li>
 <li><strong>操作系统：WINDOWS 10</strong></li>
 <li><strong>软件版本：python-3.6.2-amd64</strong></li>
 <li><strong>编&emsp;&emsp;者：WordZzzz</strong></li>
@@ -552,7 +552,7 @@
 <hr>
 <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>&emsp;&emsp;本渣渣（WordZzzz直接被舍友叫成了“我的渣”，所以以后我在博客中就以此自居了！），最近在学习Peter Harrington的<em>Machine Learning in Action</em>，一边看书一边用Python3.6实现课本中的算法（原书中使用的是Python2.x）。好记性不如烂笔头，奈何本渣渣连烂笔头都买不起，所以就来这不费笔墨的地方费尽心思写博客。本渣渣记性不是一般的差，在此记下每个算法的学习要点及Python代码实现，一方面方便自己以后复习，另一方面贴出来和大家一起学习，共同进步<del>~</del></p>
 <p><strong><font color="red">注意：python3.x与python2.x的部分函数库有较大差异，针对这个问题，本渣渣会将代码版本升级中遇到的问题在每篇博文的最后列出来，并加以解释说明，帮助大家区分理解。</font></strong></p>
-<p>原著代码（python2.x）地址：<a href="https://www.manning.com/books/machine-learning-in-action" target="_blank" rel="noopener">https://www.manning.com/books/machine-learning-in-action</a><br>本渣渣代码（python3.x）地址：<a href="https://github.com/WordZzzz/ML/tree/master/Ch03" target="_blank" rel="noopener">https://github.com/WordZzzz/ML/tree/master/Ch03</a></p>
+<p>原著代码（python2.x）地址：<a href="https://www.manning.com/books/machine-learning-in-action" target="_blank" rel="noopener">https://www.manning.com/books/machine-learning-in-action</a><br>本渣渣代码（python3.x）地址：<a href="https://github.com/WordZzzz/ML/tree/master/Ch03">https://github.com/WordZzzz/ML/tree/master/Ch03</a></p>
 <p>&emsp;&emsp;博客中的代码都会在本渣渣的GitHub上贴出，欢迎<em>Watch、Star、Fork</em>。</p>
 <h2 id="一、算法介绍："><a href="#一、算法介绍：" class="headerlink" title="一、算法介绍："></a>一、算法介绍：</h2><p>&emsp;&emsp;上一个算法介绍的是k-近邻算法，它可以完成很多分类任务，但是它最大的缺点就是无法给出数据的内在含义，决策树的主要优势就在于数据形式非常容易理解。决策树的一个重要任务就是为了理解数据中所蕴含的知识信息，所以决策树可以使用不熟悉的数据集合，并从中提取出一系列规则，这些机器根据数据集创建规则的过程就是机器学习的过程。专家系统中经常食用决策树，而且决策树给出结果往往可以匹敌在当前领域具有几十年工作经验的人类专家。流程图形式的决策树如下：</p>
 <p></p>
@@ -666,7 +666,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-03-ml-7/" title="【转】"《机器学习实战》之决策树算法（1）算法概述"">http://liaoyibin.top/yibinliao.github/2019/11/08/2017-11-03-ml-7/</a>
+    <a href="https://github.com/yibinliao/yibinliao.github/2019/11/08/2017-11-03-ml-7/" title="【转】"《机器学习实战》之决策树算法（1）算法概述"">https://github.com/yibinliao/yibinliao.github/2019/11/08/2017-11-03-ml-7/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
