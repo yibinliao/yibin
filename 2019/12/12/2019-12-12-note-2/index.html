@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "0b8451ca"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="note," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="天然呆" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    在这里梳理了在项目中与Spring Boot注解配合最为紧密的6个Spring基础框架的注解。如👇#1、@Configuration&amp;emsp;&amp;emsp;从Spring3.0，@Con">
+<meta name="keywords" content="note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring相关的6个注解探寻路">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;yibinliao&#x2F;yibinliao.github&#x2F;2019&#x2F;12&#x2F;12&#x2F;2019-12-12-note-2&#x2F;index.html">
+<meta property="og:site_name" content="天然呆">
+<meta property="og:description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    在这里梳理了在项目中与Spring Boot注解配合最为紧密的6个Spring基础框架的注解。如👇#1、@Configuration&amp;emsp;&amp;emsp;从Spring3.0，@Con">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-12T03:39:27.551Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/yibinliao/yibinliao.github/2019/12/12/2019-12-12-note-2/"/>
+
+
+
+
+
+  <title>Spring相关的6个注解探寻路 | 天然呆</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?dc6f77e22ab6a23acd0b0491a64e97c3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天然呆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">My exclusive</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oTRtgu6p8a4tv-kasHXo','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yibinliao/yibinliao.github/2019/12/12/2019-12-12-note-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宜彬">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天然呆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Spring相关的6个注解探寻路</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		  
+              <i class="fa fa-thumb-tack"></i>
+                <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+		  
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-12T14:18:44+08:00">
+                2019-12-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-12T11:39:27+08:00">
+                2019-12-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/12/12/2019-12-12-note-2/" class="leancloud_visitors" data-flag-title="Spring相关的6个注解探寻路">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<ul>
+<li><strong>转载请注明作者和出处：<a href="https://blog.csdn.net/qq_37165235" target="_blank" rel="noopener">https://blog.csdn.net/qq_37165235</a></strong></li>
+<li><strong>操作系统：WINDOWS 10</strong></li>
+<li><strong>软件版本：heo+next-5.1.4</strong></li>
+<li><strong>编&emsp;&emsp;者：浅歌余生</strong></li>
+</ul>
+<hr>
+<blockquote>
+<p>在这里梳理了在项目中与Spring Boot注解配合最为紧密的6个Spring基础框架的注解。如👇<br>#1、@Configuration<br>&emsp;&emsp;从Spring3.0，@Configuration用于定义配置类，可替换xml配置文件，被注解的类内部包含有一个或多个被@Bean注解的方法，这些方法将会被AnnotationConfigApplicationContext或AnnotationConfigWebApplicationContext类进行扫描，并用于构建bean定义，初始化Spring容器。<br>###代码示例  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class TaskAutoConfiguration &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    @Profile(&quot;biz-electrfence-controller&quot;)</span><br><span class="line">    public BizElectrfenceControllerJob bizElectrfenceControllerJob() &#123;</span><br><span class="line">        return new BizElectrfenceControllerJob();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @Profile(&quot;biz-consume-1-datasync&quot;)</span><br><span class="line">    public BizBikeElectrFenceTradeSyncJob bizBikeElectrFenceTradeSyncJob() &#123;</span><br><span class="line">        return new BizBikeElectrFenceTradeSyncJob();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">~~~  </span><br><span class="line">#2、@ComponentScan  </span><br><span class="line">&amp;emsp;&amp;emsp;做过web开发的同学一定都有用过@Controller，@Service，@Repository注解，查看其源码你会发现，他们中有一个共同的注解@Component，没错@ComponentScan注解默认就会装配标识了@Controller，@Service，@Repository，@Component注解的类到spring容器中。  </span><br><span class="line">###示例  </span><br><span class="line">~~~  </span><br><span class="line">@ComponentScan(value = &quot;com.abacus.check.api&quot;)</span><br><span class="line">public class CheckApiApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(CheckApiApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;  </span><br><span class="line">~~~  </span><br><span class="line">&gt;@SpringBootApplication注解也包含了@ComponentScan注解，所以在使用中我们也可以通过  </span><br><span class="line">&gt;@SpringBootApplication注解的scanBasePackages属性进行配置。  </span><br><span class="line"></span><br><span class="line">###示例</span><br></pre></td></tr></table></figure>
+<p>@SpringBootApplication(scanBasePackages =  {<br>    “com.abacus.check.api”, “com.abacus.check.service”}<br>)<br>public class CheckApiApplication {<br>    public static void main(String[] args) {<br>        SpringApplication.run(CheckApiApplication.class, args);<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#3、@Conditional  </span><br><span class="line">&amp;emsp;&amp;emsp;@Conditional是Spring4新提供的注解，通过@Conditional注解可以根据代码中设置的条件装载不同的bean，在设置条件注解之前，先要把装载的bean类去实现Condition接口，然后对该实现接口的类设置是否装载的条件。Spring Boot注解中的@ConditionalOnProperty、@ConditionalOnBean等以@Conditional*开头的注解，都是通过集成了@Conditional来实现相应功能的。  </span><br><span class="line">####@Conditional的定义：</span><br></pre></td></tr></table></figure>
+<p>//此注解可以标注在类和方法上<br>@Target({ElementType.TYPE,<br>    ElementType.METHOD<br>})<br>@Retention(RetentionPolicy.RUNTIME)<br>@Documented<br>public @interface Conditional {<br>    Class&lt;?extends Condition&gt;[] value();<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;从代码中可以看到，需要传入一个Class数组，并且需要继承Condition接口：</span><br></pre></td></tr></table></figure>
+<p>public interface Condition {<br>    boolean matches(ConditionContext var1, AnnotatedTypeMetadata var2);<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;Condition是个接口，需要实现matches方法，返回true则注入bean，false则不注入。  </span><br><span class="line"></span><br><span class="line">####示例：  </span><br><span class="line">&gt;首先，创建Person类：</span><br></pre></td></tr></table></figure>
+<p>public class Person {<br>    private String name;<br>    private Integer age;</p>
+<pre><code>public Person(String name, Integer age) {
+    this.name = name;
+    this.age = age;
+}
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public Integer getAge() {
+    return age;
+}
+
+public void setAge(Integer age) {
+    this.age = age;
+}
+
+@Override
+public String toString() {
+    return &quot;Person{&quot; + &quot;name=&apos;&quot; + name + &apos;\&apos;&apos; + &quot;, age=&quot; + age + &apos;}&apos;;
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;创建BeanConfig类，用于配置两个Person实例并注入，一个是比尔盖茨，一个是林纳斯。</span><br></pre></td></tr></table></figure>
+<p>@Configuration<br>public class BeanConfig {<br>    @Bean(name = “bill”)<br>    public Person person1() {<br>        return new Person(“Bill Gates”, 62);<br>    }</p>
+<pre><code>@Bean(&quot;linus&quot;)
+public Person person2() {
+    return new Person(&quot;Linus&quot;, 48);
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;接着写一个测试类进行验证这两个Bean是否注入成功。</span><br></pre></td></tr></table></figure>
+<p>public class ConditionalTest {<br>    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);</p>
+<pre><code>@Test
+public void test1() {
+    Map&lt;String, Person&gt; map = applicationContext.getBeansOfType(Person.class);
+    System.out.println(map);
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 运行，输出结果是这样的，两个Person实例被注入进容器。运行，输出结果是这样的，两个Person实例被注入进容器。</span><br></pre></td></tr></table></figure>
+<p>{bill=Person{name=’Bill Gates’,age=62},linus=Person={name=’Linus’,age=48}}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一个简单的例子，现在问题来了，如果我想根据当前操作系统来注入Person实例，windows下注入bill，linux下注入linus，怎么实现呢？</span><br><span class="line">&gt;</span><br><span class="line">&gt;这就需要我们用到@Conditional注解了，前言中提到，需要实现Condition接口，并重写方法来自定义match规则。  </span><br><span class="line"></span><br><span class="line">&gt;首先，创建一个WindowsCondition类：</span><br></pre></td></tr></table></figure>
+<p>public class WindowsCondition implements Condition {<br>    /**<br>     * @param conditionContext:判断条件能使用的上下文环境<br>     * @param annotatedTypeMetadata:注解所在位置的注释信息<br>     * */<br>    @Override<br>    public boolean matches(ConditionContext conditionContext,<br>        AnnotatedTypeMetadata annotatedTypeMetadata) {<br>        //获取ioc使用的beanFactory<br>        ConfigurableListableBeanFactory beanFactory = conditionContext.getBeanFactory();</p>
+<pre><code>    //获取类加载器
+    ClassLoader classLoader = conditionContext.getClassLoader();
+
+    //获取当前环境信息
+    Environment environment = conditionContext.getEnvironment();
+
+    //获取bean定义的注册类
+    BeanDefinitionRegistry registry = conditionContext.getRegistry();
+
+    //获得当前系统名
+    String property = environment.getProperty(&quot;os.name&quot;);
+
+    //包含Windows则说明是windows系统，返回true
+    if (property.contains(&quot;Windows&quot;)) {
+        return true;
+    }
+
+    return false;
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;matches方法的两个参数的意思在注释中讲述了，值得一提的是，conditionContext提供了多种方法，方便获取各种信息，也是SpringBoot中 @ConditonalOnXX注解多样扩展的基础。</span><br><span class="line">&gt;</span><br><span class="line">&gt;接着，创建LinuxCondition类：</span><br></pre></td></tr></table></figure>
+<p>public class LinuxCondition implements Condition {<br>    @Override<br>    public boolean matches(ConditionContext conditionContext,<br>        AnnotatedTypeMetadata annotatedTypeMetadata) {<br>        Environment environment = conditionContext.getEnvironment();</p>
+<pre><code>    String property = environment.getProperty(&quot;os.name&quot;);
+
+    if (property.contains(&quot;Linux&quot;)) {
+        return true;
+    }
+
+    return false;
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接着就是使用这两个类了，因为此注解可以标注在方法上和类上，所以分开测试：  </span><br><span class="line">####标注在方法上：  </span><br><span class="line">修改BeanConfig：</span><br></pre></td></tr></table></figure>
+<p>@Configuration<br>public class BeanConfig {<br>    //只有一个类时，大括号可以省略<br>    //如果WindowsCondition的实现方法返回true，则注入这个bean<br>    @Conditional({WindowsCondition.class<br>    })<br>    @Bean(name = “bill”)<br>    public Person person1() {<br>        return new Person(“Bill Gates”, 62);<br>    }</p>
+<pre><code>//如果LinuxCondition的实现方法返回true，则注入这个bean
+@Conditional({LinuxCondition.class
+})
+@Bean(&quot;linus&quot;)
+public Person person2() {
+    return new Person(&quot;Linus&quot;, 48);
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;修改测试方法，使其可以打印当前系统名：运行结果如下：</span><br></pre></td></tr></table></figure>
+<p>当前系统为：Windows 10<br>{bill=Person{name=’Bill Gates’,age=62}}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">接着测试在Linux系统，由于是Windows系统所以直接修改运行参数：  </span><br><span class="line">![image](https://liaoyibin.vip/images/2019-12-12-note-002-1.png)  </span><br><span class="line">&gt;修改参数  </span><br><span class="line"></span><br><span class="line">VM option:	-Dos.name=Linux  </span><br><span class="line">&gt;修改后启动测试</span><br></pre></td></tr></table></figure>
+<p>当前系统为：Linux<br>{linus=Person={name=’Linus’,age=48}}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style=&quot;color:red&quot;&gt; 一个方法只能注入一个bean实例，所以@Conditional标注在方法上只能控制一个bean实例是否注入。&lt;/span&gt;  </span><br><span class="line">####标注在类上：  </span><br><span class="line">&amp;emsp;&amp;emsp;&lt;span style=&quot;color:red&quot;&gt;一个类中可以注入很多实例，@Conditional标注在类上就决定了一批bean是否注入。&lt;/span&gt; </span><br><span class="line">我们试一下，将BeanConfig改写，这时，如果WindowsCondition返回true，则两个Person实例将被注入(注意：上一个测试将os.name改为linux，这是我将把这个参数去掉)：</span><br></pre></td></tr></table></figure>
+<p>@Conditional({WindowsCondition.class<br>})<br>@Configuration<br>public class BeanConfig {<br>    @Bean(name = “bill”)<br>    public Person person1() {<br>        return new Person(“Bill Gates”, 62);<br>    }</p>
+<pre><code>@Bean(&quot;linus&quot;)
+public Person person2() {
+    return new Person(&quot;Linus&quot;, 48);
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;结果两个实例都被注入：</span><br></pre></td></tr></table></figure>
+<p>{bill=Person={name=’Bill Gates’,age=62},linus=Person={name=’Linus’,age=48}}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;如果将类上的WindowsCondition.class改为LinuxCondition.class，结果应该可以猜到：</span><br></pre></td></tr></table></figure>
+<p>{}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;结果就是空的，类中所有bean都没有注入。  </span><br><span class="line"></span><br><span class="line">###多个条件类：  </span><br><span class="line">&amp;emsp;&amp;emsp;前言中说，@Conditional注解传入的是一个Class数组，存在多种条件类的情况。</span><br><span class="line">这种情况貌似判断难度加深了，测试一波，新增新的条件类，实现的matches返回false（这种写死返回false的方法纯属测试用，没有实际意义O(∩_∩)O）</span><br></pre></td></tr></table></figure>
+<p>public class ObstinateCondition implements Condition {<br>    @Override<br>    public boolean matches(ConditionContext conditionContext,<br>        AnnotatedTypeMetadata annotatedTypeMetadata) {<br>        return false;<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;BeanConfig修改一下：</span><br></pre></td></tr></table></figure>
+<p>@Conditional({WindowsCondition.class,<br>    ObstinateCondition.class<br>})<br>@Configuration<br>public class BeanConfig {<br>    @Bean(name = “bill”)<br>    public Person person1() {<br>        return new Person(“Bill Gates”, 62);<br>    }</p>
+<pre><code>@Bean(&quot;linus&quot;)
+public Person person2() {
+    return new Person(&quot;Linus&quot;, 48);
+}</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;结论得:  </span><br><span class="line">&gt;</span><br><span class="line">    第一个条件类实现的方法返回true，第二个返回false，则结果false，不注入进容器。  </span><br><span class="line">    第一个条件类实现的方法返回true，第二个返回true，则结果true，注入进容器中。  </span><br><span class="line"></span><br><span class="line">#4、@Import  </span><br><span class="line">&amp;emsp;&amp;emsp;通过导入的方式实现把实例加入springIOC容器中。可以在需要时将没有被Spring容器管理的类导入至Spring容器中。</span><br></pre></td></tr></table></figure>
+<p>//类定义<br>public class Square {}</p>
+<p>public class Circular {}</p>
+<p>//导入<br>@Import({Square.class,Circular.class})<br>@Configuration<br>public class MainConfig{}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#5、@ImportResource  </span><br><span class="line">&amp;emsp;&amp;emsp;和@Import类似，区别就是@ImportResource导入的是配置文件。</span><br></pre></td></tr></table></figure>
+<p>@ImportResource(“classpath:spring-redis.xml”) //导入xml配置</p>
+<p>public class CheckApiApplication {<br>    public static void main(String[] args) {<br>        SpringApplication.run(CheckApiApplication.class, args);<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#6、@Component  </span><br><span class="line">&amp;emsp;&amp;emsp;@Component是一个元注解，意思是可以注解其他类注解，如@Controller @Service @Repository。带此注解的类被看作组件，当使用基于注解的配置和类路径扫描的时候，这些类就会被实例化。其他类级别的注解也可以被认定为是一种特殊类型的组件，比如@Controller 控制器（注入服务）、@Service服务（注入dao）、@Repository dao（实现dao访问）。@Component泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注，作用就相当于 XML配置，&lt;bean id=&quot;&quot; class=&quot;&quot;/&gt;。  </span><br><span class="line"></span><br><span class="line">&lt;hr&gt;  </span><br><span class="line"></span><br><span class="line">Spring Boot最核心的20个注解  </span><br><span class="line">===  </span><br><span class="line">#1、@SpringBootApplication  </span><br><span class="line">&amp;emsp;&amp;emsp;这个注解是Spring Boot最核心的注解，用在 Spring Boot的主类上，标识这是一个 Spring Boot 应用，用来开启 Spring Boot 的各项能力。实际上这个注解是@Configuration,@EnableAutoConfiguration,@ComponentScan三个注解的组合。由于这些注解一般都是一起使用，所以Spring Boot提供了一个统一的注解@SpringBootApplication。</span><br></pre></td></tr></table></figure>
+<p>@SpringBootApplication(exclude =  {<br>    MongoAutoConfiguration.class, MongoDataAutoConfiguration.class, DataSourceAutoConfiguration.class, ValidationAutoConfiguration.class, MybatisAutoConfiguration.class, MailSenderAutoConfiguration.class, }<br>)<br>public class API {<br>    public static void main(String[] args) {<br>        SpringApplication.run(API.class, args);<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#2、@EnableAutoConfiguration  </span><br><span class="line">&amp;emsp;&amp;emsp;允许 Spring Boot 自动配置注解，开启这个注解之后，Spring Boot 就能根据当前类路径下的包或者类来配置 Spring Bean。如：当前类路径下有 Mybatis 这个 JAR 包，MybatisAutoConfiguration 注解就能根据相关参数来配置 Mybatis 的各个 Spring Bean。  </span><br><span class="line">&amp;emsp;&amp;emsp;@EnableAutoConfiguration实现的关键在于引入了AutoConfigurationImportSelector，其核心逻辑为selectImports方法，逻辑大致如下：  </span><br><span class="line"></span><br><span class="line">*  从配置文件META-INF/spring.factories加载所有可能用到的自动配置类；</span><br><span class="line">*  去重，并将exclude和excludeName属性携带的类排除；  </span><br><span class="line">*  过滤，将满足条件（@Conditional）的自动配置类返回；</span><br></pre></td></tr></table></figure>
+<p>@Target({ElementType.TYPE<br>})<br>@Retention(RetentionPolicy.RUNTIME)<br>@Documented<br>@Inherited<br>@AutoConfigurationPackage //导入AutoConfigurationImportSelector的子类@Import({EnableAutoConfigurationImportSelector.class})</p>
+<p>public @interface EnableAutoConfiguration {<br>    String ENABLED_OVERRIDE_PROPERTY = “spring.boot.enableautoconfiguration”<br>    ;<br>    Class&lt;?&gt;[] exclude() default  {<br>    }<br>    ;<br>    String[] excludeName() default  {<br>    }<br>    ;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#3、@SpringBootConfiguration  </span><br><span class="line">&amp;emsp;&amp;emsp;这个注解就是 @Configuration 注解的变体，只是用来修饰是 Spring Boot 配置而已，或者可利于 Spring Boot 后续的扩展。  </span><br><span class="line">#4、@ConditionalOnBean  </span><br><span class="line">&amp;emsp;&amp;emsp;@ConditionalOnBean(A.class)仅仅在当前上下文中存在A对象时，才会实例化一个Bean，也就是说只有当A.class 在spring的applicationContext中存在时，这个当前的bean才能够创建。</span><br></pre></td></tr></table></figure>
+<p>@Bean<br>//当前环境上下文存在DefaultMQProducer实例时，才能创建RocketMQProducerLifecycle这个Bean<br>@ConditionalOnBean(DefaultMQProducer.class)<br>public RocketMQProducerLifecycle rocketMQLifecycle() {<br>     return new RocketMQProducerLifecycle();<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#5、@ConditionalOnMissingBean  </span><br><span class="line">&gt;组合@Conditional注解，和@ConditionalOnBean注解相反，仅仅在当前上下文中不存在A对象时，才会实例化一个Bean。</span><br></pre></td></tr></table></figure>
+<p>@Bean<br>  //仅当当前环境上下文缺失RocketMQProducer对象时，才允许创建RocketMQProducer Bean对象<br>  @ConditionalOnMissingBean(RocketMQProducer.class)<br>  public RocketMQProducer mqProducer() {<br>      return new RocketMQProducer();<br>  }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#6、@ConditionalOnClass  </span><br><span class="line">&gt;组合 @Conditional 注解，可以仅当某些类存在于classpath上时候才创建某个Bean。</span><br></pre></td></tr></table></figure>
+<p> @Bean<br>  //当classpath中存在类HealthIndicator时，才创建HealthIndicator Bean对象<br>  @ConditionalOnClass(HealthIndicator.class)<br>  public HealthIndicator rocketMQProducerHealthIndicator(Map&lt;String, DefaultMQProducer&gt; producers) {<br>      if (producers.size() == 1) {<br>          return new RocketMQProducerHealthIndicator(producers.values().iterator().next());<br>      }<br>  }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#7、@ConditionalOnMissingClass  </span><br><span class="line">&amp;emsp;&amp;emsp;组合@Conditional注解，和@ConditionalOnMissingClass注解相反，当classpath中没有指定的 Class才开启配置。  </span><br><span class="line"></span><br><span class="line">#8、@ConditionalOnWebApplication  </span><br><span class="line">&amp;emsp;&amp;emsp;组合@Conditional 注解，当前项目类型是 WEB 项目才开启配置。当前项目有以下 3 种类型:ANY(任何Web项目都匹配)、SERVLET（仅但基础的Servelet项目才会匹配）、REACTIVE（只有基于响应的web应用程序才匹配）。  </span><br><span class="line"></span><br><span class="line">#9、@ConditionalOnNotWebApplication  </span><br><span class="line">&amp;emsp;&amp;emsp;组合@Conditional注解，和@ConditionalOnWebApplication 注解相反，当前项目类型不是 WEB 项目才开启配置。  </span><br><span class="line"></span><br><span class="line">#10、@ConditionalOnProperty  </span><br><span class="line">&amp;emsp;&amp;emsp;组合 @Conditional 注解，当指定的属性有指定的值时才开启配置。具体操作是通过其两个属性name以及havingValue来实现的，其中name用来从application.properties中读取某个属性值，如果该值为空，则返回false;如果值不为空，则将该值与havingValue指定的值进行比较，如果一样则返回true;否则返回false。如果返回值为false，则该configuration不生效；为true则生效。</span><br></pre></td></tr></table></figure>
+<p> @Bean<br> //匹配属性rocketmq.producer.enabled值是否为true<br> @ConditionalOnProperty(value = “rocketmq.producer.enabled”, havingValue = “true”, matchIfMissing = true)<br> public RocketMQProducer mqProducer() {<br>     return new RocketMQProducer();<br> }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#11、@ConditionalOnExpression  </span><br><span class="line">&gt;组合 @Conditional 注解，当 SpEL 表达式为 true 时才开启配置。</span><br></pre></td></tr></table></figure>
+<p>@Configuration<br>@ConditionalOnExpression(“${enabled:false}”)<br>public class BigpipeConfiguration {<br>    @Bean<br>    public OrderMessageMonitor orderMessageMonitor(ConfigContext configContext) {<br>        return new OrderMessageMonitor(configContext);<br>    }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#12、@ConditionalOnJava  </span><br><span class="line">&amp;emsp;&amp;emsp;组合@Conditional 注解，当运行的 Java JVM 在指定的版本范围时才开启配置。  </span><br><span class="line"></span><br><span class="line">#13、@ConditionalOnResource  </span><br><span class="line">&amp;emsp;&amp;emsp;组合 @Conditional 注解，当类路径下有指定的资源才开启配置</span><br></pre></td></tr></table></figure>
+<p>@Bean<br>@ConditionalOnResource(resources=”classpath:shiro.ini”)<br>protected Realm iniClasspathRealm(){<br>  return new Realm();<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#14、@ConditionalOnJndi  </span><br><span class="line">&amp;emsp;&amp;emsp;组合 @Conditional 注解，当指定的 JNDI 存在时才开启配置。  </span><br><span class="line"></span><br><span class="line">#15、@ConditionalOnCloudPlatform  </span><br><span class="line">&amp;emsp;&amp;emsp;组合 @Conditional 注解，当指定的云平台激活时才开启配置。  </span><br><span class="line"></span><br><span class="line">#16、@ConditionalOnSingleCandidate  </span><br><span class="line">&amp;emsp;&amp;emsp;组合 @Conditional 注解，当指定的 class 在容器中只有一个 Bean，或者同时有多个但为首选时才开启配置。  </span><br><span class="line"></span><br><span class="line">#17、@ConfigurationProperties  </span><br><span class="line">&amp;emsp;&amp;emsp;Spring Boot可使用注解的方式将自定义的properties文件映射到实体bean中，比如config.properties文件。</span><br></pre></td></tr></table></figure>
+<p>@Data<br>@ConfigurationProperties(“rocketmq.consumer”)<br>public class RocketMQConsumerProperties extends RocketMQProperties {<br>    private boolean enabled = true;</p>
+<pre><code>private String consumerGroup;
+
+private MessageModel messageModel = MessageModel.CLUSTERING;
+
+private ConsumeFromWhere consumeFromWhere = ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET;
+
+private int consumeThreadMin = 20;
+
+private int consumeThreadMax = 64;
+
+private int consumeConcurrentlyMaxSpan = 2000;
+
+private int pullThresholdForQueue = 1000;
+
+private int pullInterval = 0;
+
+private int consumeMessageBatchMaxSize = 1;
+
+private int pullBatchSize = 32;</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#18、@EnableConfigurationProperties  </span><br><span class="line">&amp;emsp;&amp;emsp;当@EnableConfigurationProperties注解应用到你的@Configuration时，任何被@ConfigurationProperties注解的beans将自动被Environment属性配置。 这种风格的配置特别适合与SpringApplication的外部YAML配置进行配合使用。</span><br></pre></td></tr></table></figure>
+<p>@Configuration<br>@EnableConfigurationProperties({<br>    RocketMQProducerProperties.class,<br>    RocketMQConsumerProperties.class,<br>})<br>@AutoConfigureOrder<br>public class RocketMQAutoConfiguration {<br>    @Value(“${spring.application.name}”)<br>    private String applicationName;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#19、@AutoConfigureAfter  </span><br><span class="line">&amp;emsp;&amp;emsp;用在自动配置类上面，表示该自动配置类需要在另外指定的自动配置类配置完之后。</span><br><span class="line">如 Mybatis 的自动配置类，需要在数据源自动配置类之后。</span><br></pre></td></tr></table></figure>
+<p>@AutoConfigureAfter(DataSourceAutoConfiguration.class)<br>public class MybatisAutoConfiguration {<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#20、@AutoConfigureBefore  </span><br><span class="line">&amp;emsp;&amp;emsp;这个和@AutoConfigureAfter注解使用相反，表示该自动配置类需要在另外指定的自动配置类配置之前。  </span><br><span class="line"></span><br><span class="line">#21、@AutoConfigureOrder  </span><br><span class="line">&amp;emsp;&amp;emsp;Spring Boot 1.3.0中有一个新的注解@AutoConfigureOrder，用于确定配置加载的优先级顺序。</span><br></pre></td></tr></table></figure>
+<p>  @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE) // 自动配置里面的最高优先级<br>  @Configuration<br>  @ConditionalOnWebApplication // 仅限于web应用<br>  @Import(BeanPostProcessorsRegistrar.class) // 导入内置容器的设置<br>  public class EmbeddedServletContainerAutoConfiguration {<br>      @Configuration<br>      @ConditionalOnClass({ Servlet.class, Tomcat.class })<br>      @ConditionalOnMissingBean(value = EmbeddedServletContainerFactory.class, search = SearchStrategy.CURRENT)<br>      public static class EmbeddedTomcat {<br>         // …<br>      }</p>
+<pre><code>@Configuration
+@ConditionalOnClass({ Servlet.class, Server.class, Loader.class, WebAppContext.class })
+@ConditionalOnMissingBean(value = EmbeddedServletContainerFactory.class, search = SearchStrategy.CURRENT)
+public static class EmbeddedJetty {
+   // ...
+}</code></pre><p>}<br><del>~</del></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    宜彬
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/yibinliao/yibinliao.github/2019/12/12/2019-12-12-note-2/" title="Spring相关的6个注解探寻路">https://github.com/yibinliao/yibinliao.github/2019/12/12/2019-12-12-note-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/12/2019-12-12-note-1/" rel="next" title="@WebFilter注解的了解">
+                <i class="fa fa-chevron-left"></i> @WebFilter注解的了解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc8c4ea561d65e7" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQ1Mi8yMzk1Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+			<a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/myAvatar.jpeg"
+                alt="宜彬" />
+			</a>
+            
+              <p class="site-author-name" itemprop="name">宜彬</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yibinliao/liaoyibin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/lyibin/blog" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-glide"></i>Gitee</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+		  
+		  <div id="music163player">
+		     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=3067283127&auto=0&height=32"></iframe>
+		  </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宜彬</span>
+
+</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66487461";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("uxygA8bNWrpfwUvb6bMzegq8-gzGzoHsz", "E4hOT01N1yMBmFGk0koDAj9v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+
+
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.9/love.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
