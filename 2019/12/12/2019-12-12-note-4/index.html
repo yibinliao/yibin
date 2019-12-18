@@ -142,15 +142,15 @@
 
 
 
-<meta name="description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    话不多说直接记录！(^_−)☆    自动判断是新增还是修改的关键字： MERGE INTO     MERGE 语法：   12345678MERGE INTO [your table-">
+<meta name="description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    话不多说直接记录！(^_−)☆    自动判断是新增还是修改的关键字： MERGE INTO     MERGE 语法：  12345MERGE INTO [your table-name">
 <meta name="keywords" content="oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Oracle的Merge的用法">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;yibinliao&#x2F;yibinliao.github&#x2F;2019&#x2F;12&#x2F;12&#x2F;2019-12-12-note-4&#x2F;index.html">
 <meta property="og:site_name" content="天然呆">
-<meta property="og:description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    话不多说直接记录！(^_−)☆    自动判断是新增还是修改的关键字： MERGE INTO     MERGE 语法：   12345678MERGE INTO [your table-">
+<meta property="og:description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    话不多说直接记录！(^_−)☆    自动判断是新增还是修改的关键字： MERGE INTO     MERGE 语法：  12345MERGE INTO [your table-name">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-12T06:58:15.116Z">
+<meta property="og:updated_time" content="2019-12-18T06:20:06.025Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -431,8 +431,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-12T14:58:15+08:00">
-                2019-12-12
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-18T14:20:06+08:00">
+                2019-12-18
               </time>
             
           </span>
@@ -492,7 +492,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287 字
+                  308 字
                 </span>
               
 
@@ -543,11 +543,18 @@
 <h3 id="自动判断是新增还是修改的关键字："><a href="#自动判断是新增还是修改的关键字：" class="headerlink" title="自动判断是新增还是修改的关键字："></a>自动判断是新增还是修改的关键字：</h3><blockquote>
 <p>MERGE INTO   </p>
 </blockquote>
-<p>MERGE 语法：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MERGE INTO [your table-name] [rename your table here] </span><br><span class="line">USING ( [write your query here] )[rename your query-sql and using just like a table] </span><br><span class="line">ON ([conditional expression here] AND [...]...) </span><br><span class="line">WHEN MATCHED THEN [here you can execute some update sql or something else ] </span><br><span class="line">WHEN NOT MATCHED THEN [execute something else here ! ] </span><br><span class="line">~~~  </span><br><span class="line"></span><br><span class="line">例如我们想插入一条数据  &#123;ID=2,NAME=&apos;newtest2&apos;&#125;  那么可以这么写：</span><br></pre></td></tr></table></figure>
-<p>MERGE INTO  TEST T1<br>USING (SELECT ‘2’ as ID, ‘newtest2’ as NAME FROM dual) T2 on (T1.ID=T2.ID)<br>WHEN MATCHED THEN UPDATE SET T1.NAME=T2.NAME<br>WHEN NOT MATCHED THEN  INSERT (T1.ID, T1.NAME) VALUES (T2.ID, T2.NAME ); </p>
-<p><del>~</del>  </p>
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><span style="color:red">注意：</span></h2><p>&emsp;&emsp;Merge Into的原理是，从using 搜出来的结果逐条与on条件匹配，然后决定是update还是Insert。 当USING后面的sql没有查询到数据的时候，Merge Into语句是不会执行update和Insert操作的。<br>所以要想让Merge Into正常运行，要保证USING 后面的SELECT有数据，个人喜欢使用DUAL表作为USING后的表，方便自己控制</p>
+<p>MERGE 语法： </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MERGE</span> <span class="keyword">INTO</span> [your <span class="keyword">table</span>-<span class="keyword">name</span>] [<span class="keyword">rename</span> your <span class="keyword">table</span> here] </span><br><span class="line"><span class="keyword">USING</span> ( [write your <span class="keyword">query</span> here] )[<span class="keyword">rename</span> your <span class="keyword">query</span>-<span class="keyword">sql</span> <span class="keyword">and</span> <span class="keyword">using</span> just <span class="keyword">like</span> a <span class="keyword">table</span>] </span><br><span class="line"><span class="keyword">ON</span> ([conditional expression here] <span class="keyword">AND</span> [...]...) </span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">MATCHED</span> <span class="keyword">THEN</span> [here you can <span class="keyword">execute</span> <span class="keyword">some</span> <span class="keyword">update</span> <span class="keyword">sql</span> <span class="keyword">or</span> something <span class="keyword">else</span> ] </span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">NOT</span> <span class="keyword">MATCHED</span> <span class="keyword">THEN</span> [<span class="keyword">execute</span> something <span class="keyword">else</span> here ! ]</span><br></pre></td></tr></table></figure>
+
+
+<p>例如我们想插入一条数据  {ID=2,NAME=’newtest2’}  那么可以这么写： </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MERGE</span> <span class="keyword">INTO</span>  <span class="keyword">TEST</span> T1</span><br><span class="line"><span class="keyword">USING</span> (<span class="keyword">SELECT</span> <span class="string">'2'</span> <span class="keyword">as</span> <span class="keyword">ID</span>, <span class="string">'newtest2'</span> <span class="keyword">as</span> <span class="keyword">NAME</span> <span class="keyword">FROM</span> dual) T2 <span class="keyword">on</span> (T1.ID=T2.ID)</span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">MATCHED</span> <span class="keyword">THEN</span> <span class="keyword">UPDATE</span> <span class="keyword">SET</span> T1.NAME=T2.NAME</span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">NOT</span> <span class="keyword">MATCHED</span> <span class="keyword">THEN</span>  <span class="keyword">INSERT</span> (T1.ID, T1.NAME) <span class="keyword">VALUES</span> (T2.ID, T2.NAME );</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><span style="color:red">注意：</span></h2><p>&emsp;&emsp;Merge Into的原理是，从using 搜出来的结果逐条与on条件匹配，然后决定是update还是Insert。 当USING后面的sql没有查询到数据的时候，Merge Into语句是不会执行update和Insert操作的。<br>所以要想让Merge Into正常运行，要保证USING 后面的SELECT有数据，个人喜欢使用DUAL表作为USING后的表，方便自己控制 </p>
+<hr>
+<p><strong><font color="red" size="3" face="仿宋">本次记录到此结束，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">哇咔咔(∪｡∪)｡｡｡zzz</font></strong></p>
 
       
     </div>
@@ -621,8 +628,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/12/2019-12-12-note-1/" rel="prev" title="2019-12-12-note-1">
-                2019-12-12-note-1 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/12/2019-12-12-note-1/" rel="prev" title="WebFilter注解的了解">
+                WebFilter注解的了解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +726,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
