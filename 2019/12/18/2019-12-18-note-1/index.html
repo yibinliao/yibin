@@ -153,7 +153,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-1-01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-1-03.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-1-02.png">
-<meta property="og:updated_time" content="2019-12-18T07:31:34.701Z">
+<meta property="og:updated_time" content="2019-12-18T07:45:16.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-1-01.png">
 
@@ -439,7 +439,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-18T15:31:34+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-18T15:45:16+08:00">
                 2019-12-18
               </time>
             
@@ -550,17 +550,14 @@
 </blockquote>
 <h1 id="1、“-”语法的说明"><a href="#1、“-”语法的说明" class="headerlink" title="1、“```”语法的说明"></a>1、“```”语法的说明</h1><p>&emsp;&emsp;关于 ``` 语法的作用相信都知道吧，就是声明一块空间用于代码使用的。但是呢我这小白刚使用Markdown语法时，踩到的坑真的是要我飙血三升啊╮(╯﹏╰）╭为什么这么说嘞，下面让我来一一陈述吧。 </p>
 <h1 id="2、“血泪史”啊"><a href="#2、“血泪史”啊" class="headerlink" title="2、“血泪史”啊"></a>2、“血泪史”啊</h1><p>&emsp;&emsp;刚一开始我是使用Markdownpad2来写md文章的，因为比较简洁看着舒服，在我写博客的时候贴了些代码用于陈述所说观点，所以使用到了 ``` 语法。话不多说问题如下： </p>
-<p>##2.1、关于“```”和“<del>~</del>”的区别及异常 </p>
-<p>&emsp;&emsp;两个标签的实现效果是一样的，如图所示： </p>
+<h2 id="2-1、关于“-”和“-”的区别及异常"><a href="#2-1、关于“-”和“-”的区别及异常" class="headerlink" title="2.1、关于“```”和“~”的区别及异常"></a>2.1、关于“```”和“<del>~</del>”的区别及异常</h2><p>&emsp;&emsp;两个标签的实现效果是一样的，如图所示： </p>
 <p><img src="https://liaoyibin.vip/images/2019-12-18-note-1-01.png" alt="image">  </p>
-<p> ###异常： </p>
-<ul>
+<h3 id="异常："><a href="#异常：" class="headerlink" title="异常："></a>异常：</h3><ul>
 <li>1、“<del>~</del>”无法标记代码块内的语言类型，“```”可以标记 </li>
 <li>2、“<del>~</del>”无法结束代码块语法的声明 </li>
 </ul>
 <p>暂时是只发现了这两个异常，另外个人建议写md文档不推荐使用Markdownpad2编辑器，感觉太多坑了。我主要用它也是用来写博客的，不清楚是不是因为版本的原因 </p>
-<p>##2.2、“```”使用注意 </p>
-<p>&emsp;&emsp;在使用该语法时<span style="color:red;">开头之前必须要有一行空行</span>，若要标记语言则在<span style="color:red;">开头语法加一个空格然后声明语言类型(具体如图所示)</span>，既然开头有要求自然结束也有要求的。<span style="color:red;">结束时切忌不要在结束标签后加空格，否则该标签未关闭。关闭则直接回车换两行即可</span>。这就是让我痛不欲生错误啊，该问题在编译器里是看不出异常的，编译器里预览效果都是正常的包括直接用浏览器预览也是正常的，但实际并不是这样的，当你生成hexo博客后就会发现异常。下面带图说话：<br>&emsp;&emsp;使用注意： </p>
+<h2 id="2-2、“-”使用注意"><a href="#2-2、“-”使用注意" class="headerlink" title="2.2、“```”使用注意"></a>2.2、“```”使用注意</h2><p>&emsp;&emsp;在使用该语法时<span style="color:red;">开头之前必须要有一行空行</span>，若要标记语言则在<span style="color:red;">开头语法加一个空格然后声明语言类型(具体如图所示)</span>，既然开头有要求自然结束也有要求的。<span style="color:red;">结束时切忌不要在结束标签后加空格，否则该标签未关闭。关闭则直接回车换两行即可</span>。这就是让我痛不欲生错误啊，该问题在编译器里是看不出异常的，编译器里预览效果都是正常的包括直接用浏览器预览也是正常的，但实际并不是这样的，当你生成hexo博客后就会发现异常。下面带图说话：<br>&emsp;&emsp;使用注意： </p>
 <blockquote>
 <p>标记语言只是让代码高亮 </p>
 </blockquote>
@@ -849,7 +846,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、“-”语法的说明"><span class="nav-number">1.</span> <span class="nav-text">1、“```”语法的说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、“血泪史”啊"><span class="nav-number">2.</span> <span class="nav-text">2、“血泪史”啊</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、“-”语法的说明"><span class="nav-number">1.</span> <span class="nav-text">1、“```”语法的说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、“血泪史”啊"><span class="nav-number">2.</span> <span class="nav-text">2、“血泪史”啊</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1、关于“-”和“-”的区别及异常"><span class="nav-number">2.1.</span> <span class="nav-text">2.1、关于“```”和“~”的区别及异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常："><span class="nav-number">2.1.1.</span> <span class="nav-text">异常：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2、“-”使用注意"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、“```”使用注意</span></a></li></ol></li></ol></div>
             
 
           </div>
