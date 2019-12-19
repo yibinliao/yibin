@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "0b8451ca"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="note," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="天然呆" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    前言：关于该方法呢主要是来源于该博主提供的资料，我主要是稍微修改下并记录。额外添加的内容就是表格标题，理论上支持导出一级、二级、三级等多级表头Excel文档，测试一级、二级是OK的，先上效">
+<meta name="keywords" content="note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于POI导出Excel多级表头带标题与表尾的封装方法">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;yibinliao&#x2F;yibinliao.github&#x2F;2019&#x2F;12&#x2F;18&#x2F;2019-12-18-note-3&#x2F;index.html">
+<meta property="og:site_name" content="天然呆">
+<meta property="og:description" content="转载请注明作者和出处：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_37165235 操作系统：WINDOWS 10 软件版本：heo+next-5.1.4 编&amp;emsp;&amp;emsp;者：浅歌余生    前言：关于该方法呢主要是来源于该博主提供的资料，我主要是稍微修改下并记录。额外添加的内容就是表格标题，理论上支持导出一级、二级、三级等多级表头Excel文档，测试一级、二级是OK的，先上效">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-3-001.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-3-002.png">
+<meta property="og:updated_time" content="2019-12-19T06:49:41.932Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;liaoyibin.vip&#x2F;images&#x2F;2019-12-18-note-3-001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","overview":true,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/yibinliao/yibinliao.github/2019/12/18/2019-12-18-note-3/"/>
+
+
+
+
+
+  <title>关于POI导出Excel多级表头带标题与表尾的封装方法 | 天然呆</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?dc6f77e22ab6a23acd0b0491a64e97c3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天然呆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">My exclusive</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oTRtgu6p8a4tv-kasHXo','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yibinliao/yibinliao.github/2019/12/18/2019-12-18-note-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宜彬">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天然呆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">关于POI导出Excel多级表头带标题与表尾的封装方法</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		  
+              <i class="fa fa-thumb-tack"></i>
+                <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+		  
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-18T15:59:34+08:00">
+                2019-12-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-19T14:49:41+08:00">
+                2019-12-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/12/18/2019-12-18-note-3/" class="leancloud_visitors" data-flag-title="关于POI导出Excel多级表头带标题与表尾的封装方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<ul>
+<li><strong>转载请注明作者和出处：<a href="https://blog.csdn.net/qq_37165235" target="_blank" rel="noopener">https://blog.csdn.net/qq_37165235</a></strong></li>
+<li><strong>操作系统：WINDOWS 10</strong></li>
+<li><strong>软件版本：heo+next-5.1.4</strong></li>
+<li><strong>编&emsp;&emsp;者：浅歌余生</strong></li>
+</ul>
+<hr>
+<blockquote>
+<p>前言：关于该方法呢主要是来源于<a href="https://blog.csdn.net/csdn_jy/article/details/84943397" target="_blank" rel="noopener">该博主</a>提供的资料，我主要是稍微修改下并记录。额外添加的内容就是表格标题，理论上支持导出一级、二级、三级等多级表头Excel文档，测试一级、二级是OK的，先上效果图如下： </p>
+</blockquote>
+<p>&emsp;&emsp;<strong>这是导出一级表头的Excel文档效果图：</strong> </p>
+<p><img src="https://liaoyibin.vip/images/2019-12-18-note-3-001.png" alt="image">  </p>
+<p>&emsp;&emsp;<strong>这是导出二级表头的Excel文档效果图：</strong> </p>
+<p><img src="https://liaoyibin.vip/images/2019-12-18-note-3-002.png" alt="image">  </p>
+<h1 id="一级表头的实现"><a href="#一级表头的实现" class="headerlink" title="一级表头的实现"></a>一级表头的实现</h1><p>&emsp;&emsp;首先呢说下一级表头是实现，从简单的开始： </p>
+<blockquote>
+<p>先上工具类封装的统一方法： </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ylz.packcommon.common.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.ylz.bizDo.statisticalReports.vo.Record;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang.StringUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.RichTextString;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.util.CellRangeAddress;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: ExcelUtils</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:POI实现导出含多级表头和含有表尾部信息的excel</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>: lyb</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/12/17 11:21</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> : V1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExcelUtils</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Author</span> lyb </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Description</span> //TODO 多级表头Excel文件导出</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Date</span> 11:24 2019/12/17 </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Param</span> [sheetName, head, dataList, type, tableEndData，out，titles] sheet名,多级表头,导出数据,导出类型,表尾,输出文件对象,首行标题</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> org.apache.poi.xssf.usermodel.XSSFWorkbook </span></span><br><span class="line"><span class="comment">    **/</span> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> XSSFWorkbook <span class="title">exportMultilevelHeader</span><span class="params">(String sheetName, String[][] head, List&lt;?&gt; dataList, Class type, String[][] tableEndData, OutputStream out,String titles)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*变量*/</span></span><br><span class="line">        String[] properties;</span><br><span class="line">        Object[] rowValue;</span><br><span class="line">        List&lt;Object[]&gt; values;</span><br><span class="line">        Field[] fields;</span><br><span class="line">        XSSFCell cell;</span><br><span class="line">        String vo;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*导出Excel*/</span></span><br><span class="line">        <span class="comment">// 第一步，创建一个workBook，对应一个Excel文件</span></span><br><span class="line">        XSSFWorkbook wb = <span class="keyword">new</span> XSSFWorkbook();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 表头 标题样式</span></span><br><span class="line">        XSSFFont titleFont = wb.createFont();</span><br><span class="line">        titleFont.setFontName(<span class="string">"微软雅黑"</span>);<span class="comment">//字体</span></span><br><span class="line">        titleFont.setFontHeightInPoints((<span class="keyword">short</span>) <span class="number">15</span>);<span class="comment">// 字体大小</span></span><br><span class="line">        XSSFCellStyle titleStyle = wb.createCellStyle();</span><br><span class="line">        titleStyle.setFont(titleFont);</span><br><span class="line">        titleStyle.setAlignment(XSSFCellStyle.ALIGN_CENTER);<span class="comment">// 左右居中</span></span><br><span class="line">        titleStyle.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);<span class="comment">// 上下居中</span></span><br><span class="line">        titleStyle.setLocked(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 第二步，在workBook中添加一个sheet,对应Excel文件中的sheet</span></span><br><span class="line">        XSSFSheet sheet = wb.createSheet(sheetName);</span><br><span class="line">        <span class="comment">// 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short</span></span><br><span class="line">        XSSFRow row;</span><br><span class="line">        <span class="comment">// 第四步，创建单元格，并设置值表头 设置表头居中</span></span><br><span class="line">        <span class="comment">//生成一个Style</span></span><br><span class="line">        XSSFCellStyle style = wb.createCellStyle();</span><br><span class="line">        style.setWrapText(<span class="keyword">true</span>);</span><br><span class="line">        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);<span class="comment">//水平居中</span></span><br><span class="line">        style.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);<span class="comment">//垂直居中</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mergerNum = <span class="number">0</span>; <span class="comment">//合并数</span></span><br><span class="line">        <span class="comment">//添加表格标题</span></span><br><span class="line">        sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,  type.getDeclaredFields().length- <span class="number">1</span>));</span><br><span class="line">        row = sheet.createRow(<span class="number">0</span>);<span class="comment">//创建一行表格</span></span><br><span class="line">        row.setHeight((<span class="keyword">short</span>) <span class="number">0x349</span>);<span class="comment">//设置高度</span></span><br><span class="line">        cell = row.createCell(<span class="number">0</span>);<span class="comment">//创建单元格</span></span><br><span class="line">        cell.setCellStyle(titleStyle);<span class="comment">//设置样式</span></span><br><span class="line">        cell.setCellValue(titles);<span class="comment">//设置标题</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//给单元格设置值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; head.length; i++) &#123;</span><br><span class="line">            row = sheet.createRow(i+<span class="number">1</span>);</span><br><span class="line">            row.setHeight((<span class="keyword">short</span>) <span class="number">700</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; head[i].length; j++) &#123;</span><br><span class="line">                cell = row.createCell(j);</span><br><span class="line">                cell.setCellStyle(style);</span><br><span class="line">                cell.setCellValue(head[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;Integer, List&lt;Integer&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, List&lt;Integer&gt;&gt;();   <span class="comment">// 合并行时要跳过的行列</span></span><br><span class="line">        <span class="comment">//合并行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; head[head.length - <span class="number">1</span>].length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">""</span>.equals(head[head.length - <span class="number">1</span>][i])) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = head.length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!<span class="string">""</span>.equals(head[j][i])) &#123;</span><br><span class="line">                        sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(j+<span class="number">1</span>, head.length, i, i)); <span class="comment">// 合并单元格</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (map.containsKey(j)) &#123;</span><br><span class="line">                            List&lt;Integer&gt; list = map.get(j);</span><br><span class="line">                            list.add(i);</span><br><span class="line">                            map.put(j, list);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">                            list.add(i);</span><br><span class="line">                            map.put(j, list);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//合并列</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; head.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; head[i].length; j++) &#123;</span><br><span class="line">                List&lt;Integer&gt; list = map.get(i);</span><br><span class="line">                <span class="keyword">if</span> (list == <span class="keyword">null</span> || (list != <span class="keyword">null</span> &amp;&amp; !list.contains(j))) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">""</span>.equals(head[i][j])) &#123;</span><br><span class="line">                        mergerNum++;</span><br><span class="line">                        <span class="keyword">if</span> (mergerNum != <span class="number">0</span> &amp;&amp; j == (head[i].length - <span class="number">1</span>)) &#123;</span><br><span class="line">                            sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(i, i, j - mergerNum, j)); <span class="comment">// 合并单元格</span></span><br><span class="line">                            mergerNum = <span class="number">0</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (mergerNum != <span class="number">0</span>) &#123;</span><br><span class="line">                            sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(i+<span class="number">1</span>, i+<span class="number">1</span>, j - mergerNum - <span class="number">1</span>, j - <span class="number">1</span>)); <span class="comment">// 合并单元格</span></span><br><span class="line">                            mergerNum = <span class="number">0</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//解析导出类型</span></span><br><span class="line">        Class&lt;Record&gt; recordClass = Record<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == type) &#123;</span><br><span class="line">            <span class="comment">//导出失败</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type.equals(recordClass)) &#123;</span><br><span class="line">            <span class="comment">//导出List&lt;Record&gt;</span></span><br><span class="line">            <span class="comment">//获取Record中包含的properties，用于生成表格头及创建Cell</span></span><br><span class="line">            properties = getRecordProperties(dataList, <span class="keyword">null</span>);</span><br><span class="line">            vo = <span class="string">"record"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//导出List&lt;Bean&gt;</span></span><br><span class="line">            <span class="comment">//获取Bean的Field</span></span><br><span class="line">            fields = type.getDeclaredFields();</span><br><span class="line">            properties = getRecordProperties(<span class="keyword">null</span>, fields);</span><br><span class="line">            vo = <span class="string">"bean"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == head) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (head.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                i = head.length - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            head[i] = properties;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 第五步，写入实体数据</span></span><br><span class="line">        <span class="comment">/*表头行数*/</span></span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (head.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            m = head.length;</span><br><span class="line">        &#125;</span><br><span class="line">        values = getRowValue(dataList, properties, vo);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dataList.size(); i++) &#123;</span><br><span class="line">            row = sheet.createRow(i + m+<span class="number">1</span>); <span class="comment">//创建行</span></span><br><span class="line">            rowValue = values.get(i);</span><br><span class="line">            <span class="comment">// 第四步，创建单元格，并设置值</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; properties.length; j++) &#123;</span><br><span class="line">                cell = row.createCell(j);</span><br><span class="line">                cell.setCellStyle(style);</span><br><span class="line">                setCellValue(cell, rowValue[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第六步，处理表格尾部的数据</span></span><br><span class="line">        <span class="keyword">if</span> (tableEndData != <span class="keyword">null</span> &amp;&amp; tableEndData.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tableEndData.length; i++) &#123;</span><br><span class="line">                row = sheet.createRow(dataList.size() + m + i);</span><br><span class="line">                sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(dataList.size() + m + i, dataList.size() + m + i, <span class="number">0</span>,  type.getDeclaredFields().length- <span class="number">1</span>));</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tableEndData[i].length; j++) &#123;</span><br><span class="line">                    cell = row.createCell(j);</span><br><span class="line">                    cell.setCellStyle(style);</span><br><span class="line">                    setCellValue(cell, tableEndData[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            wb.write(out);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> wb;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Author</span> lyb </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Description</span> //TODO 获取Record包含的所有properties </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Date</span> 11:30 2019/12/17 </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Param</span> [list, fields] 列名,属性</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> java.lang.String[] 包含properties</span></span><br><span class="line"><span class="comment">    **/</span> </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String[] getRecordProperties(List&lt;?&gt; list, Field[] fields) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != list &amp;&amp; <span class="keyword">null</span> == fields) &#123;</span><br><span class="line">            Record record = (Record) list.get(<span class="number">0</span>);</span><br><span class="line">            Set&lt;String&gt; keySet = record.keySet();</span><br><span class="line">            List&lt;String&gt; keysList = <span class="keyword">new</span> ArrayList&lt;&gt;(keySet);</span><br><span class="line">            <span class="keyword">return</span> keysList.toArray(<span class="keyword">new</span> String[keysList.size()]);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">null</span> != fields &amp;&amp; <span class="keyword">null</span> == list) &#123;</span><br><span class="line">            String[] properties = <span class="keyword">new</span> String[fields.length];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fields.length; i++) &#123;</span><br><span class="line">                properties[i] = fields[i].getName();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> properties;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Author</span> lyb </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Description</span> //TODO 转换列表数据</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Date</span> 11:33 2019/12/17 </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Param</span> [list, properties, vo] 数据列表,属性列表,类型</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> java.util.List&lt;java.lang.Object[]&gt; 转换后的数据</span></span><br><span class="line"><span class="comment">    **/</span> </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;Object[]&gt; getRowValue(List&lt;?&gt; list, String[] properties, String vo) &#123;</span><br><span class="line">        List&lt;Object[]&gt; resultList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Record record;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isBlank(vo)) &#123;</span><br><span class="line">            <span class="keyword">return</span> resultList;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"record"</span>.equals(vo)) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">                record = (Record) object;</span><br><span class="line">                Object[] values = <span class="keyword">new</span> Object[properties.length];    <span class="comment">//定义在外部数组值会被最后写入的覆盖</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; properties.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">                    values[i] = record.get(properties[i]);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                resultList.add(values);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> resultList;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"bean"</span>.equals(vo)) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">                Class cf = object.getClass();</span><br><span class="line">                Object[] values = <span class="keyword">new</span> Object[properties.length];    <span class="comment">//定义在外部数组值会被最后写入的覆盖</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; properties.length; i++) &#123;</span><br><span class="line">                    <span class="keyword">char</span>[] name = properties[i].toCharArray();</span><br><span class="line">                    name[<span class="number">0</span>] -= <span class="number">32</span>;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Method method = cf.getMethod(<span class="string">"get"</span> + String.valueOf(name));</span><br><span class="line">                        values[i] = method.invoke(object);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                resultList.add(values);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> resultList;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Author</span> lyb </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Description</span> //TODO 设置单元格值</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Date</span> 11:34 2019/12/17 </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Param</span> [cell, value] 单元格,值</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> void </span></span><br><span class="line"><span class="comment">    **/</span> </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setCellValue</span><span class="params">(XSSFCell cell, Object value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">            cell.setCellValue((String) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_STRING);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Date) &#123;</span><br><span class="line">            cell.setCellValue((Date) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_STRING);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Boolean) &#123;</span><br><span class="line">            cell.setCellValue((Boolean) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_BOOLEAN);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Double) &#123;</span><br><span class="line">            cell.setCellValue((Double) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_NUMERIC);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Calendar) &#123;</span><br><span class="line">            cell.setCellValue((Calendar) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_STRING);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> RichTextString) &#123;</span><br><span class="line">            cell.setCellValue((RichTextString) value);</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_STRING);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cell.setCellValue(String.valueOf(value));</span><br><span class="line">            cell.setCellType(XSSFCell.CELL_TYPE_STRING);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Author</span> lyb</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Description</span> //TODO 测试方法</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Date</span> 13:26 2019/12/19</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Param</span> [args]</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> void</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line"><span class="comment">//        //标题</span></span><br><span class="line"><span class="comment">//        String titles="小脆皮";</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //表头名</span></span><br><span class="line"><span class="comment">//        String[][] headNames = &#123;&#123;"鲁班","小乔","安琪拉","甑姬","王昭君"&#125;&#125;;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //表尾名</span></span><br><span class="line"><span class="comment">//        String[][] tableEnd = &#123;&#123;"不准看：    "&#125;&#125;;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        List&lt;Testvo&gt; list = new ArrayList&lt;&gt;();</span></span><br><span class="line"><span class="comment">//        for (int i=0;i&lt;5;i++) &#123;</span></span><br><span class="line"><span class="comment">//            Testvo vo=new Testvo();</span></span><br><span class="line"><span class="comment">//            vo.setNo("1");</span></span><br><span class="line"><span class="comment">//            vo.setName("鲁班大师");</span></span><br><span class="line"><span class="comment">//            vo.setSex("男");</span></span><br><span class="line"><span class="comment">//            vo.setAge(26);</span></span><br><span class="line"><span class="comment">//            vo.setMoney("13888");</span></span><br><span class="line"><span class="comment">//            list.add(vo);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        OutputStream out = new FileOutputStream("C:\\Users\\lyb\\Desktop\\测试汇总表.xls");</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //导出</span></span><br><span class="line"><span class="comment">//        exportMultilevelHeader("测试汇总",headNames,list,Testvo.class,tableEnd,out,titles);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>&emsp;&emsp;<strong><span style="color:red;">这里有一个类需要说明下，就是Record类进行重写了，作用其实就是中间接收我们需导出数据的实体类属性，该类贴码如下：</span></strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ylz.bizDo.statisticalReports.vo;</span><br><span class="line"></span><br><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: Record</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:该类用于POI多级表头Excel文件导出,用于接收导出实体属性</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>: lyb</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/12/17 11:30</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> : V1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedHashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Record</span> <span class="keyword">extends</span> <span class="title">LinkedHashMap</span>&lt;<span class="title">String</span>,<span class="title">Object</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String field,Object value)</span></span>&#123;</span><br><span class="line">        put(field,value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (String)get(field);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getInteger</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Integer)get(field);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getLong</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Long)get(field);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> BigDecimal <span class="title">getBigDecimal</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (BigDecimal)get(field);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getDate</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Date)get(field);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">getBoolean</span><span class="params">(String field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Boolean) get(field);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>&emsp;&emsp;然后呢就是一级表头文档导出的测试方法了： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    <span class="comment">//标题</span></span><br><span class="line">    String titles=<span class="string">"小脆皮"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//表头名</span></span><br><span class="line">    String[][] headNames = &#123;&#123;<span class="string">"鲁班"</span>,<span class="string">"小乔"</span>,<span class="string">"安琪拉"</span>,<span class="string">"甑姬"</span>,<span class="string">"王昭君"</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//表尾名</span></span><br><span class="line">    String[][] tableEnd = &#123;&#123;<span class="string">"不准看：    "</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    List&lt;Testvo&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++) &#123;</span><br><span class="line">        Testvo vo=<span class="keyword">new</span> Testvo();</span><br><span class="line">        vo.setNo(<span class="string">"1"</span>);</span><br><span class="line">        vo.setName(<span class="string">"鲁班大师"</span>);</span><br><span class="line">        vo.setSex(<span class="string">"男"</span>);</span><br><span class="line">        vo.setAge(<span class="number">26</span>);</span><br><span class="line">        vo.setMoney(<span class="string">"13888"</span>);</span><br><span class="line">        list.add(vo);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    OutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"C:\\Users\\lyb\\Desktop\\测试汇总表.xls"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//导出</span></span><br><span class="line">    exportMultilevelHeader(<span class="string">"测试汇总"</span>,headNames,list,Testvo<span class="class">.<span class="keyword">class</span>,<span class="title">tableEnd</span>,<span class="title">out</span>,<span class="title">titles</span>)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>&emsp;&emsp;至于TestVo类就不需要我贴了吧，只是一个测试类只有get、set方法，属性就循环的那些。 </p>
+<hr>
+<p>&emsp;&emsp;至于二级表头的测试方法如下，主要内容都在工具类里面。基本上都有写注释相信应该可以看明白。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> lyb</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> //TODO 家庭签约登记统计Excel导出</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 9:43 2019/12/17</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Param</span> []</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> java.lang.String</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">findRegistrationStatisticalToExcel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//查询条件</span></span><br><span class="line">        RegistrationListQvo qvo = (RegistrationListQvo) getJsonLay(RegistrationListQvo<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        <span class="keyword">if</span>(qvo==<span class="keyword">null</span>)&#123;</span><br><span class="line">            qvo=<span class="keyword">new</span> RegistrationListQvo();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//登录人信息</span></span><br><span class="line">        CdUser user = <span class="keyword">this</span>.getSessionUser();</span><br><span class="line">        <span class="comment">//导出数据</span></span><br><span class="line">        List&lt;RegistrationStatisticalExportVo&gt; listData = sysDao.getStattisticalReportsDao().registrationListExport(qvo);</span><br><span class="line">        <span class="comment">//Excel导出标题</span></span><br><span class="line">        String titles = <span class="string">"登记表"</span>;</span><br><span class="line">        <span class="comment">//表头名</span></span><br><span class="line">        String[][] headNames = &#123;&#123;<span class="string">"姓名"</span>,<span class="string">"性别"</span>,<span class="string">"身份证号"</span>,<span class="string">"联系电话"</span>,<span class="string">"签约编码"</span>,<span class="string">"签约家庭类别"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>, <span class="string">"重点人群签约服务项目"</span>, <span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>, <span class="string">"其他人群"</span>, <span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">"签约服务包类型"</span>,<span class="string">"备注"</span>&#125;,</span><br><span class="line">                &#123;<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">"计生失独伤残家庭"</span>, <span class="string">"计生独生子女"</span>, <span class="string">"计生双女"</span>, <span class="string">"五保户"</span>, <span class="string">"低保户"</span>,<span class="string">"建档立卡贫困人口"</span>,<span class="string">"其他"</span>, <span class="string">"老年人"</span>,<span class="string">"高血压患者"</span>,<span class="string">"2型糖尿病患者"</span>,<span class="string">"严重精神障碍患者"</span>,<span class="string">"结核病患者"</span>,<span class="string">"孕产妇"</span>,<span class="string">"0-6岁儿童"</span>, <span class="string">"残疾人"</span>, <span class="string">"脑血管病患者"</span>, <span class="string">"冠心病患者"</span>,<span class="string">"癌症患者"</span>,<span class="string">"其他"</span>,<span class="string">""</span>,<span class="string">""</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//表尾名</span></span><br><span class="line">        String[][] tableEnd = &#123;&#123;<span class="string">"填报人:          分管院长：                填报时间：    年    月    日"</span>&#125;&#125;;</span><br><span class="line">        getResponse().reset();</span><br><span class="line">        getResponse().setContentType(<span class="string">"application/vnd..ms-excel"</span>);</span><br><span class="line">        getResponse().setHeader(<span class="string">"content-Disposition"</span>,<span class="string">"attachment;filename="</span>+ URLEncoder.encode(<span class="string">"汇总表.xls"</span>,<span class="string">"utf-8"</span>));</span><br><span class="line">        ExcelUtils.exportMultilevelHeader(<span class="string">"汇总表"</span>,headNames,listData, RegistrationStatisticalExportVo<span class="class">.<span class="keyword">class</span>,<span class="title">tableEnd</span>,<span class="title">getResponse</span>().<span class="title">getOutputStream</span>(),<span class="title">titles</span>)</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">new</span> ActionException(getClass(), getAct(), getJsons(), e);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>代码什么的都已经贴完了，也没别的东西了。</strong> </p>
+<hr>
+<p><strong><font color="red" size="3" face="仿宋">本次记录到此结束，欢迎订阅、关注、收藏、评论、点赞哦～～(￣▽￣～)～</font></strong></p>
+<p><strong><font color="red" size="3" face="仿宋">哇咔咔(∪｡∪)｡｡｡zzz</font></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    宜彬
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/yibinliao/yibinliao.github/2019/12/18/2019-12-18-note-3/" title="关于POI导出Excel多级表头带标题与表尾的封装方法">https://github.com/yibinliao/yibinliao.github/2019/12/18/2019-12-18-note-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/18/2019-12-18-note-2/" rel="next" title="关于layUI多级表头">
+                <i class="fa fa-chevron-left"></i> 关于layUI多级表头
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc8c4ea561d65e7" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQ1Mi8yMzk1Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+			<a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/myAvatar.jpeg"
+                alt="宜彬" />
+			</a>
+            
+              <p class="site-author-name" itemprop="name">宜彬</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yibinliao/liaoyibin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/lyibin/blog" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-glide"></i>Gitee</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+		  
+		  <div id="music163player">
+		     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=3067283127&auto=0&height=32"></iframe>
+		  </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/u011475210" title="CSDN博客主页" target="_blank">CSDN博客主页</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.gitee.io" title="中国站主页" target="_blank">中国站主页</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wordzzzz.github.io" title="全球站主页" target="_blank">全球站主页</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一级表头的实现"><span class="nav-number">1.</span> <span class="nav-text">一级表头的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宜彬</span>
+
+</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66487461";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("uxygA8bNWrpfwUvb6bMzegq8-gzGzoHsz", "E4hOT01N1yMBmFGk0koDAj9v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+
+
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.9/love.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":null,"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"mobile":null,"show":false,"react":null,"opacityDefault":0.5,"opacityOnHover":0,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
